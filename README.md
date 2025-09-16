@@ -1,1 +1,1 @@
-ayuda.
+Repositorio para mi desgracia personal.
