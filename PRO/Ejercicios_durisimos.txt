@@ -91,3 +91,55 @@ proceso ej6 {
 		FinSi
 	FinPara
 FinProceso
+
+--------------------------------------
+EJERCICIO TOCHO
+
+Proceso7 Pag 48
+	Definir min, max, RO, Contador como Entero;
+	Definir Respuesta como caracter;
+	Definir Adivinado como lógico;
+
+	Escribir “Escribe los límites”;
+	Leer min, max;
+	Adivinado <- falso;
+	Contador <- 0;
+	RO <- aleatorio(min, max);
+	Escribir RO;
+	Escribir “S correcto A más alto B más bajo”;
+	Leer Respuesta;
+	Repetir
+
+	Segun Respuesta hacer
+		S: Adivinado <- Verdadero;
+		A: Contador <- contador + 1;
+			RO <-Aleatorio(min,RO);
+			Escribir RO;
+		B: Contador <- contador + 1;
+			RO <- Aleatorio(RO, max);
+			Escribir RO;
+	FinSegun
+	Hasta que !Adivinado;
+
+	Escribir “S correcto A más alto B más bajo”;
+	Leer Respuesta;
+	
+	Escribir “Numero adivinado !!! El programa ha necesitado”, contador ,“ intentos”;
+FinProceso
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
