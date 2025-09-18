@@ -17,7 +17,7 @@ intentos que has necesitado.
  Si produces 6 fallos, habrás perdido y se mostrará el dibujo del ahorcado completo.
 
 
-PAPA
+PALABRA ES --> PAPA
 
 proceso killmyself {
 	
@@ -36,21 +36,24 @@ proceso killmyself {
 	dimensión vector[longitud(cadena)]
 	dimensión palabraC[longitud(cadena)]
 
-
-	para i <- hasta longitud(secreto) con paso 1
+	// Recorre todo el vector y lo rellena con asteriscos
+	para i <- 0 hasta longitud(secreto) con paso 1
 		vector[i] <- "*";
 		Escribir sin saltar vector[i];
 	finpara
 
+	// Recorre todo el vector y rellena i con cada valor de cada posición (1,1 ; 2,2 etc)
 	para i<-0 hasta longitud(secreto-1) con paso 1 hacer
 		palabraC[i] <- subcadena(i,i)
 	finpara
 
+
+	// Empezamos el game
 	Repetir 
 		Escribir "espejito espejito, en que letra piensa ese cerebrito?"
 		leer letra;
 		
-		para i<-0 hasta longitud(secreto) con paso 1 hacer
+		para i<-0 hasta longitud(secreto-1) con paso 1 hacer
 			
 			si letra = palabra[i] entonces
 				
@@ -74,6 +77,7 @@ proceso killmyself {
 	SiNo
 		Escribir "Acaba con tu vida <3"
 	FinSi
+FinProceso
 
 
 
