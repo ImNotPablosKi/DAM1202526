@@ -128,8 +128,29 @@ Proceso7 Pag 48
 FinProceso
 
 
+EJERCICIOS FUNCIONES
+----
 
+Ejercicio 8
 
+Crear una función recursiva que permita calcular el factorial de un número. Realiza un
+programa principal donde se lea un entero y se muestre el resultado del factorial.
+
+función sum <- calcSuma(numerin) {
+	definir sum como entero;
+	si numerin = 0 entonces
+		sum <- 0;
+	sino
+		sum <- numerin + calcSuma(numerin -1);
+	FinSi			
+
+proceso ej8 {
+	
+	definir sumatorio, numero como entero;
+	sumatorio <- 0;
+	Escribir "pasa un numerin";
+	leer numero;
+	escribir "el sumatorio es " calcSuma(numero);
 
 
 

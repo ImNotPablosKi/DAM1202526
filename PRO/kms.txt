@@ -1,0 +1,83 @@
+Ejercicios duros (10 p49)
+---
+
+Escribe un programa para jugar al ahorcado.
+ Un jugador introduce una palabra secreta y otro jugador tratará de adivinarla.
+ Aparecerá la palabra oculta (se mostrará un conjunto de asteriscos con la longitud de la
+palabra que hay que adivinar).
+ El programa te va pidiendo letras.
+ Si la letra está en la palabra, se mostrar la palabra mostrando las letras acertadas y los
+asteriscos en las letras que faltan por averiguar.
+ Cada vez que se introduce una letra se muestra las letras que has introducido
+anteriormente.
+ Si la letra no se encuentra en la palabra se suma un fallo. Según el número de fallos se
+mostrará el dibujo del ahorcado cada vez ms completo.
+ Si introduces todas las letras de la palabra has ganada y te mostrará el número de
+intentos que has necesitado.
+ Si produces 6 fallos, habrás perdido y se mostrará el dibujo del ahorcado completo.
+
+
+PAPA
+
+proceso killmyself {
+	
+	definir secreto como cadena;
+	definir letra como carácter;
+	definir vector palabraC como cadena;
+	definir i como entero;
+	definir intentos como entero;
+	definir adivinado como lógico;
+	escribir "desembucha";
+	leer secreto;
+	
+	intentos <- 0;
+	adivinado <- falso;	
+
+	dimensión vector[longitud(cadena)]
+	dimensión palabraC[longitud(cadena)]
+
+
+	para i <- hasta longitud(secreto) con paso 1
+		vector[i] <- "*";
+		Escribir sin saltar vector[i];
+	finpara
+
+	para i<-0 hasta longitud(secreto-1) con paso 1 hacer
+		palabraC[i] <- subcadena(i,i)
+	finpara
+
+	Repetir 
+		Escribir "espejito espejito, en que letra piensa ese cerebrito?"
+		leer letra;
+		
+		para i<-0 hasta longitud(secreto) con paso 1 hacer
+			
+			si letra = palabra[i] entonces
+				
+				si vector[i] <- letra;
+					Escribir "eso ya lo has puesto";
+				sino
+					vector[i] <- letra;
+				FinSi
+			SiNo
+				intentos <- intentos + 1;
+				Escribir "Esa letra no me sirve, dame otra, llevas " intentos "en total."
+			FinSi
+				
+
+		FinPara
+
+	Hasta que adivinado 0 intentos = 6
+
+	Si adivinado = true entonces;
+		Escribir "ENHORABUENA!!!!!!"
+	SiNo
+		Escribir "Acaba con tu vida <3"
+	FinSi
+
+
+
+
+	
+
+	
