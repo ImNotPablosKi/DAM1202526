@@ -328,11 +328,249 @@ proceso 20 {
 	Escribir "Tienes " totalEuros " € y " totalCent " centimos bro";
 FinProceso
 
+
+
+
+-------------------------------------------------------------------------
+EMPIEZAN LOS IFs - ESTRUCTURAS ALTERNATIVAS
+-------------------------------------------------------------------------
 	
+
+
+
+
+Ejercicio 1
+Algoritmo que pida dos números e indique si el primero es mayor que el segundo o no.
+
+proceso 1 {
+	definir num1, num2 como enteros;
+	Escribir "tal, numerines";
+	leer num1, num2;
+	si num2 > num2 entonces
+		escribir num1 > num2;
+	sino
+		escribir num2 > num2;
+	finsi
+FinProceso
+
+Ejercicio 2
+Algoritmo que pida un número y diga si es positivo, negativo o 0.
+
+proceso 2 {
+	definir num como entero;
+	escribir "numerin";
+	leer num;
+	si num = 0 entonces
+		escribir "es cero bro";
+	sino
+		si num > 0 entonces
+			escribir "es positivo";	
+		sino
+			escribir "es negativo bro";
+		finsi
+	finsi
+FinProceso
+
+Ejercicio 3
+Escribe un programa que lea un número e indique si es par o impar.
+
+proceso 3 {
+	definir num como entero;
+	escribir "numerin";
+	leer num;
+	si num % 2 = 0 entonces
+		escribir "es par bro";
+	sino
+		escribir "es impar bro";
+	finsi
+FinProceso
+
+Ejercicio 4
+Crea un programa que pida al usuario dos números y muestre su división si el segundo
+no es cero, o un mensaje de aviso en caso contrario.
+
+proceso 4 {
+	definir num1, num2 como enteros;
+	escribir "pasa dos numerines bro";
+	leer num1, num2;
+	si num2 = 0 entonces
+		escribir "gilipollas, por cero no divides";
+	sino
+		escribir "el resultado es " num1 / num2;
+	sino
+FinProceso
+
+Ejercicio 5
+Escribe un programa que pida un nombre de usuario y una contraseña y si se ha
+introducido “pepe” y “asdasd” se indica “Has entrado al sistema”, sino se da un error.
+
+proceso 5 {
+	definir user, passwd como cadena;
+	escribir "pasa user y pw porfa";
+	leer user, passwd;
+	si user = pepe & passwd = asdasd entonces
+		escribir "Bienvenido al sistema bro";
+	sino
+		escribir "VERY LOUD INCORRECT BUZZER.mp3"	;
+	finsi
+FinProceso
+
+Ejercicio 6
+Programa que lea una cadena por teclado y compruebe si es una letra mayúscula.
+
+proceso 6 {
+	definir cosa como cadena;
+	escribir "tal";
+	leer cosa;
+	si mayusculas(cosa) = cosa entonces
+		escribir "duro";
+	sino
+		escribir "nuh uh";
+	finsi
+FinProceso
+
+Ejercicio 7
+Realiza un algoritmo que calcule la potencia, para ello pide por teclado la base y el
+exponente. Pueden ocurrir tres cosas:
+ El exponente sea positivo, sólo tienes que imprimir la potencia.
+ El exponente sea 0, el resultado es 1.
+ El exponente sea negativo, el resultado es 1/potencia con el exponente positivo.
+
+proceso 7 {
+	definir base, exponente como entero;
+	escribir "pasa base y exponente bro";
+	leer base, exponente;
+	si exponente > 0 entonces
+		escribir "el resultado es " base^exponente,
+	sino
+		si exponente = 0 entonces
+			escribir "Es 1 bro"
+		sino
+			escribir "El resultado es " 1/(base^abs(exponente));
+		finsi
+	finsi
+FinProceso
+
+Ejercicio 8
+Algoritmo que pida dos números ‘nota’ y ‘edad’ y un carácter ‘sexo’ y muestre el mensaje
+‘ACEPTADA’ si la nota es mayor o igual a cinco, la edad es mayor o igual a dieciocho y
+el sexo es ‘F’. En caso de que se cumpla lo mismo, pero el sexo sea ‘M’, debe imprimir
+‘POSIBLE’. Si no se cumplen dichas condiciones se debe mostrar ‘NO ACEPTADA’.
+
+proceso 8 {
+	definir nota, edad como entero;
+	definir sexo como cadena;
+	escribir "Dime la edad, nota, y sexo correspondiente";
+	leer nota, edad, sexo;
+	si nota >= 5 & edad >= 18 entonces
+		si sexo="f" entonces
+			escribir "ACEPTADA";
+		sino
+			si sexo="m" entonces
+				escribir "POSIBLE";
+			sino
+				escribir "NO ACEPTADA";
+			finsi
+		finsi
+	finsi
+FinProceso
+
+Ejercicio 9
+Algoritmo que pida tres números y los muestre ordenados (de mayor a menor);
+
+proceso 9 {
+	definir num1, num2, num3 como enteros;
+	escribir "pasa 3 numerines bro";
+	leer num1, num2, num3;
+	Si num1>num2 Y num1>num3 Entonces
+		Si num2>num3 Entonces
+			Escribir num1," ",num2," ",num3;
+		SiNo
+			Escribir num1," ",num3," ",num2;
+		FinSi
+	FinSi
+	Si num2>num1 Y num2>num3 Entonces
+		Si num1>num3 Entonces
+			Escribir num2," ",num1," ",num3;
+		SiNo
+			Escribir num2," ",num3," ",num1;
+		FinSi
+	FinSi
+	Si num3>=num1 Y num3>=num2 Entonces
+		Si num1>num2 Entonces
+			Escribir num3," ",num1," ",num2;
+		SiNo
+			Escribir num3," ",num2," ",num1;
+		FinSi
+	FinSi
 	
+FinProceso
+
+Ejercicio 10
+Algoritmo que pida los puntos centrales x1,y1,x2,y2 y los radios r1,r2 de dos
+circunferencias y las clasifique en uno de estos estados:
+ exteriores
+ tangentes exteriores
+ secantes
+ tangentes interiores
+ interiores
+ concéntricas
+
+proceso 10 {
+	definir x1,y1,x2,y2,r1,r2 como real;
+	definir d como real;
+	escribir "pásame todos los valores que me da perecilla";
+	leer x1,y1,x2,y2,r1,r2;
 	
+	d <- raiz((x2-x1)^2 + (y2-y1)^2);
 	
+	// Circunferencia exterior
+	Si d> (r1 + r2) Entonces
+		Escribir "Circunferencias exteriores bro";
+	FinSi
+
+	// Circ. Tangente exterior
+	Si distancia = (r1 + r2) Entonces
+		Escribir "Circunferencias tangentes exteriores";
+	FinSi
+
+	// Circ. Secantes
+	Si distancia < (r1 + r2) Y distancia > abs(r1-r2) Entonces
+		Escribir "Circunferencias secantes";
+	FinSi
+
+	// Circunferencias tangentes interiores
+	Si distancia = abs(r1-r2) Entonces
+		Escribir "Circunferencias tangentes interiores";
+	FinSi
+
+
+	// Circunferencias interiores
+	Si distancia>0 Y distancia<abs(r1-r2) Entonces
+		Escribir "Circunferencias interiores";
+	FinSi
+
+	// Circunferencias concétricas
+	Si distancia=0 Entonces
+		Escribir "Circunferencias concétricas";
+	FinSi
+FinProceso
+
 	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
