@@ -556,14 +556,212 @@ proceso 10 {
 	FinSi
 FinProceso
 
+Ejercicio 11
+Programa que lea 3 datos de entrada A, B y C. Estos corresponden a las dimensiones de
+los lados de un triángulo. El programa debe determinar qué tipo de triangulo es, teniendo
+en cuenta los siguiente:
+
+proceso 11 {
+	definir a, b, c comom enteros;
+	escribir "pasa numerines vro";
+	leer a, b, c;
 	
+	si a^2+b^2=c^2 O a^2+c^2=b^2 O c^2+a^2=b^2 entonces
+		escribir "triangulo rectangulo";
+	sino
+		si a=b O b=c O c=a entonces
+			escribir "isósceles bro";
+		sino
+			si a=b=c entonces
+				escribir "equilátero vro";
+			sino
+				escribir "escaleno vro";
+			finsi
+		finsi
+	finsi
+finproceso
+
+Ejercicio 12
+Escribir un programa que lea un año indicar si es bisiesto. Nota: un año es bisiesto si es
+un número divisible por 4, pero no si es divisible por 100, excepto que también sea
+divisible por 400.
+
+Proceso Ej12
+	Definir año Como Entero;
+	Escribir "Dime el año, canelo: "; Leer año;
+	Si año % 4 = 0 Entonces
+		Si año % 100 = 0 Entonces
+			Si año % 400 = 0 Entonces
+				Escribir "Es bisiesto";
+			Sino
+				Escribir "No es visiesto"
+			FinSi
+		SiNo
+			Escribir "No es Visiesto"
+		FinSi
+	Sino
+		Escribir "Es Bisiesto"
+	FinSi
+FinProceso
+
+Ejercicio 13 // **R
+Escribe un programa que pida una fecha (día, mes y año) y diga si es correcta.
+
+proceso 13 {
+	definir dia, mes, año como entero;
+	definir diasMes como entero;
+	escribir "pasa fechilla bro";
+	leer dia, mes, año;
+	
+	según mes hacer
+		1,3,5,7,8,10,12:
+			diaMes <- 31;
+		4,6,9,11:
+			diaMes <- 30;
+		2:
+			
+			Si (año % 4 = 0 Y NO (año % 100 = 0)) O año % 400 = 0 Entonces
+				diaMes <- 29;
+			SiNo
+				diaMes <- 28;
+			FinSi
+		De Otro Modo:
+				Escribir "Fecha incorrecta";
+		FinSegun
+		Si dia<0 O dia>diaMes Entonces
+			Escribir "Fecha incorrecta";
+		SiNo
+			Escribir "Fecha correcta";
+		FinSi
+FinProceso
+
+Ejercicio 14
+La asociación de vinicultores tiene como política fijar un precio inicial al kilo de uva, la
+cual se clasifica en tipos A y B, y además en tamaños 1 y 2. Cuando se realiza la venta
+del producto, ésta es de un solo tipo y tamaño, se requiere determinar cuánto recibirá un
+productor por la uva que entrega en un embarque, considerando lo siguiente: si es de tipo
+A, se le cargan 20 céntimos al precio inicial cuando es de tamaño 1; y 30 céntimos si es
+de tamaño 2. Si es de tipo B, se rebajan 30 céntimos cuando es de tamaño 1, y 50 céntimos
+cuando es de tamaño 2. Realice un algoritmo para determinar la ganancia obtenida.
 
 
+Proceso Ejercicio14
+	Definir tipo Como Cadena;
+	Definir tamaño Como Entero;
+	Definir precioi, preciof, kilos Como Real;
+	Repetir
+		Escribir "Que tipo de venta usas ¿A o B? "; Leer tipo;
+		Escribir "Que tamaño de venta usas ¿1 o 2? "; Leer tamaño;
+			tipo <- mayúsculas(tipo);
+		Si tipo <> "A" Y tipo <> "B" O tamaño <> 1 Y tamaño <> 2
+			escribir "nuh uh lmao";
+		finsi
+	Hasta Que tipo = "A" O tipo = "B" Y tamaño = 1 O tamaño = 2;
+	Escribir "Establece el precio inicial "; Leer precioi;
+	Escribir "Establece la cantidad de kilos vendida "; Leer kilos;
+	Si tipo = "A" Entonces
+		Si tamaño = 1 Entonces
+			precioi <- precioi + 0,20;
+		SiNo
+			precioi <- precioi + 0,30;
+		FinSi
+	SiNo
+		Si tamaño = 1 Entonces
+			precioi <- precioi - 0,30;
+		SiNo
+			precioi <- precioi - 0,50;
+		FinSi
+	FinSi
+	preciof <- precioi * kilos;
+	Escribir "El precio final es de ", preciof, "€";
+FinProceso
+	
+Ejercicio 15
+El director de una escuela está organizando un viaje de estudios, y requiere determinar
+cuánto debe cobrar a cada alumno y cuánto debe pagar a la compañía de viajes por el
+servicio. La forma de cobrar es la siguiente: si son 100 alumnos o más, el costo por cada
+alumno es de 65 euros; de 50 a 99 alumnos, el costo es de 70 euros, de 30 a 49, de 95
+euros, y si son menos de 30, el costo de la renta del autobús es de 4000 euros, sin importar
+el número de alumnos. Realice un algoritmo que permita determinar el pago a la compañía
+de autobuses y lo que debe pagar cada alumno por el viaje.
+
+proceso 15 {
+	Definir num_alumnos Como Entero;
+	Definir coste_por_alumno como Real;
+	Definir coste_autobus como real;
+	
+	si num_alumnos >=  100 entonces
+		coste_por_alumno <- 65;
+		escribir "el coste es de ", num_alumnos x coste_alumno;
+	finsi
+	
+	si num_alumnos =< 99 Y num_alumnos >= 50 entonces
+		coste_por_alumno <- 70;
+	finsi
+
+	si num_alumnos =< 49 Y num_alumnos >= 30 entonces
+		coste_por_alumno <- 95;
+	finsi
+
+	si num_alumnos < 30 entonces
+		coste_autobus <- 4000;
+		coste_autobus <- coste_autobus / num_alumnos;
+	finsi
+FinProceso
+
+Ejercicio 16
+La política de cobro de una compañía telefónica es: cuando se realiza una llamada, el
+cobro es por el tiempo que ésta dura, de tal forma que los primeros cinco minutos cuestan
+1 euro, los siguientes tres, 80 céntimos, los siguientes dos minutos, 70 céntimos, y a partir
+del décimo minuto, 50 céntimos. Además, se carga un impuesto de 3 % cuando es
+domingo, y si es otro día, en turno de mañana, 15 %, y en turno de tarde, 10 %. Realice
+un algoritmo para determinar cuánto debe pagar por cada concepto una persona que
+realiza una llamada.
 
 
-
-
-
+Proceso Ejercicio16
+	Definir duracion Como Real;
+	Definir dia, horario Como Cadena;
+	Definir
+	Print("Hello world!")
+	Escribir "Cuanto ha durado la llamada "; Leer duracion;
+	// Empleo la variable duración para ahorrarme el uso de otra que acumule el precio acumulado, ya que no es 	// realmente necesario tener ambos valores simbultaneamente. (PC1 L)
+	Si duracion <= 5 Entonces
+		duracion <- 1;
+	SiNo
+		Si duracion <= 8 Entonces
+			duracion <- 1,8;
+		sino
+			Si duracion <= 10 Entonces
+				duracion <- 2,5;
+			sino
+				//La siguiente linea suma el excedente de minutos (mas de 10) mas esos 10 minutos 				// que es el 2.50
+				duracion <- (duracion - 10) * 0,5 + 2,5;
+			FinSi
+		FinSi
+	FinSi
+	Escribir "Ecsucha tú, que día és "; Leer dia;
+	dia <- mayusculas(dia);
+	Si dia = "DOMINGO" Entonces
+		duracion <- duracion * 1,03;
+	Sino
+		Repetir
+			Escribir "En que turno ah usted llamado callabero "; Leer horario;
+			horario <- mayusculas(horario)
+			Si horario = "MAÑANA" Entonces;
+				duracion <- duracion * 1,15;
+			SiNo
+				Si horario = "TARDE" Entonces;
+					duracion <- duracion * 1,10;
+				Sino
+					Escribir "Naranjas de la china (racista)";
+				FinSi
+			FinSi
+		Hasta Que horario = "MAÑANA" O horario = "TARDE"
+	FinSi
+	Escribir "El costo de la llamada es de ", duracion, "€";
+FinProceso
+	
 
 
 
