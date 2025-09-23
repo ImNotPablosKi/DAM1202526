@@ -762,6 +762,225 @@ Proceso Ejercicio16
 	Escribir "El costo de la llamada es de ", duracion, "€";
 FinProceso
 	
+Ejercicio 17
+Realiza un programa que pida por teclado el resultado (dato entero) obtenido al lanzar un
+dado de seis caras y muestre por pantalla el número en letras (dato cadena) de la cara
+opuesta al resultado obtenido.
+ Nota 1: En las caras opuestas de un dado de seis caras están los números: 1-6, 2-5 y 3-
+4.
+ Nota 2: Si el número del dado introducido es menor que 1 o mayor que 6, se mostrará
+el mensaje: “ERROR: número incorrecto.”.
+
+proceso 17 {
+	definir cara como entero;
+	escribir "que se muevan esos dados anda";
+	leer cara;
+	
+	según cara hacer
+		1:
+			escribir "SEIS";
+		2:
+			escribir "CINCO"
+		3:
+			escribir "CUATRO";
+		4:
+			escribir "TRES";
+		5:
+			escribir "DOS";
+		6:
+			escribir "UNO";
+		De otro modo:
+			escribir "nuh uh, ese numerín de donde sale?";
+	FinSegun
+FinProceso
+
+Ejercicio 18
+Realiza un programa que pida el día de la semana (del 1 al 7) y escriba el día
+correspondiente. Si introducimos otro número nos da un error.
+
+proceso 19 {
+	definir num como entero;
+	escribir "pasa numerin de la semana";
+	leer num;
+	Según num Hacer
+		1:
+			escribir "LUNES";
+		2:
+			escribir "MARTES";
+		3.
+			escribir "MIERCOLES";
+		4:
+			escribir "JUEVES";
+		5:
+			escribir "VIERNES";
+		6:
+			escribir "SABADO";
+		7:
+			escribir "DOMINGO";
+		De otro modo:
+			escribir "NIGGER";
+	FinSegun
+FinProceso
+
+Ejercicio 19
+Escribe un programa que pida un número entero entre uno y doce e imprima el número
+de días que tiene el mes correspondiente.
+
+proceso 19 {
+	definir num como entero;
+	escribir "pasa numerin bro";
+	leer numerin;
+	
+	Segun num hacer
+		1:
+			escribir "ENERO -> 31 dias";
+		2:
+			escribir "FEBRERO -> 28 o 29 idk";
+		3:
+			escribir "MARZO -> 31 dias";
+		4:
+			escribir "ABRIL -> 30 dias";	
+		5:
+			escribir "MAYO -> 31 dias";
+		6:
+			escribir "JUNIO -> 30 dias";
+		7:
+			escribir "JULIO -> 31 dias";
+		8:
+			escribir "AGOSTO -> 31 dias";
+		9:
+			escribir "SEPTIEMBRE -> 30 dias";
+		10:
+			escribir "OCTUBRE -> 31 dias";
+		11:
+			escribir "NOVIEMBRE -> 30 dias";
+		12:
+			escribir "DICIEMBRE -> 31 dias";
+		De otro modo:
+			escribir "Off the bridge you go nigger";
+	FinSegun
+FinProceso
+
+Ejercicio 20
+Una compañía de transporte internacional tiene servicio en algunos países de América del
+Norte, América Central, América del Sur, Europa y Asia. El costo por el servicio de
+transporte se basa en el peso del paquete y la zona a la que va dirigido. Lo anterior se
+muestra en la tabla:
+
+--------------------------------------------------
+Zona 	Ubicación 		Costo/gramo
+
+1 	América del Norte 	24.00 euros
+
+2 	América Central 	20.00 euros
+
+3	América del Sur 	21.00 euros
+
+4 	Europa 			10.00 euros
+
+5 	Asia 			18.00 euros
+----------------------------------------------------
+
+Parte de su política implica que los paquetes con un peso superior a 5 kg no son
+transportados, esto por cuestiones de logística y de seguridad. Realice un algoritmo para
+determinar el cobro por la entrega de un paquete o, en su caso, el rechazo de la entrega.
+
+proceso 20 {
+	definir zona, gramos como entero;
+	definir costeG como real;
+	escribir "cuanta merca llevas vro (en g/ porfa)? y pa donde te la llevas?";
+	leer gramos, zona;
+	
+	Si gramos  > 5000 entonces
+		escribir "lo siento bro pero te vas a comer una polla xd";
+	sino
+		Segun zona hacer
+			1:
+				costeG <- gramos * 24;
+				escribir "te sale la tontería  a ", costeG;
+			2:
+				costeG <- gramos * 20;
+				escribir "Semi-Panchito, te sale la tontería  a ", costeG;
+			3:
+				costeG <- gramos * 21;
+				escribir "Panchito, te sale la tontería  a ", costeG;	
+			4:
+				costeG <- gramos * 10;
+				escribir "te sale la tontería  a ", costeG;
+			5:
+				costeG <- gramos * 18;
+				escribir "ナンセンスなのは分かる ", costeG;
+			De otro modo:
+				escribir "que solo tienes cinco zonas, espabilao";
+		FinSegun
+	FinSi
+FinProceso
+
+
+
+
+
+-----------------------------------------------------
+ESTRUCTURAS REPETITIVAS (>-<)
+-----------------------------------------------------
+
+
+
+
+
+Ejercicio 1
+Crea una aplicación que pida un número y calcule su factorial (El factorial de un número
+es el producto de todos los enteros entre 1 y el propio número y se representa por el
+número seguido de un signo de exclamación. Por ejemplo 5! = 1x2x3x4x5=120),
+
+proceso 1 {
+	definir num, i, res como entero;
+	escribir "pasa un numerin bro";
+	leer num;
+
+	res <- 1;
+	
+	para i <- 1 hasta num con paso 1 hacer;
+		res <- res * i;
+	FinPara
+	
+	escribir "el resultado es ", res;
+FinProceso
+
+Ejercicio 2
+Crea una aplicación que permita adivinar un número. La aplicación genera un número
+aleatorio del 1 al 100. A continuación, va pidiendo números y va respondiendo si el
+número a adivinar es mayor o menor que el introducido, además de los intentos que te
+quedan (tienes 10 intentos para acertarlo). El programa termina cuando se acierta el
+número (además te dice en cuantos intentos lo has acertado), si se llega al límite de
+intentos te muestra el número que había generado.
+
+proceso 2 {
+	definir intentos, num_real, num_ingresado como enteros;
+	intentos <- 10;
+	num_real <- aleatorio(1,100);
+	
+	Escribir "pasa un numerín a ver que tal";
+	leer num_ingresado;
+	
+	mientras num_ingresado <> num_real hacer
+		si num_ingresado > num_real entonces
+			escribir "muy alto bro";
+		sino
+			escribir "muy bajo";
+		finsi
+		intentos <- intentos - 1;
+		
+		Escribir "te quedan ", intentos, "intentos vro";
+		leer num_ingresado
+	FinMientras
+	
+	Si num_ingresado = num_real entonces
+		escribir "buenísima bro";
+	sino
+		escribir "el numero era ", num_real ," try harder vro";
+	FinSi
+FinProceso
 
 
 
