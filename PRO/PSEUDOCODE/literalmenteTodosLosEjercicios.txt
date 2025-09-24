@@ -982,8 +982,118 @@ proceso 2 {
 	FinSi
 FinProceso
 
+Ejercicio 3
+Algoritmo que pida números hasta que se introduzca un cero. Debe imprimir la suma y la
+media de todos los números introducidos.
 
+proceso 3 {
+	definir num, cont, suma, media como enteros;
+	suma <- 0;
+	cont <- 0;
+	repetir
+		escribir "pasa numerin (con el 0 sales)";
+		leer num;
+		suma <- suma + num;
 
+		//Si num=0 no debemos tenerlo en cuenta para calcular la media
+		Si num<>0 Entonces
+			cont <- cont + 1;
+		FinSi
+	hasta que num = 0
+
+	//Si cont=0 no puedo realizar la división
+	Si cont<>0 Entonces
+		media <- suma / cont;
+	SiNo
+		media <- 0;
+	FinSi
+	Escribir "Suma:",suma;
+	Escribir "Media:",media;
+FinProceso
+
+Ejercicio 4
+Realizar un algoritmo que pida números (se pedirá por teclado la cantidad de números a
+introducir). El programa debe informar de cuantos números introducidos son mayores
+que 0, menores que 0 e iguales a 0.
+
+proceso 4 {
+	definir i, cont, num, ceros, mayores, menores; como enteros;
+	escribir "cuantos numerines te cunden vro?"?
+	leer cont;
+	mayores <- 0;
+	menores <- 0;
+	ceros <- 0;
+	para i <- 1 hasta cont hacer
+		escribir "pon un numerin"; leer num;
+		si num = 0 entonces
+			escribir "buen cero bro";
+			ceros <- ceros + 1;
+		sino 
+			si num > 0 entonces
+				escribir "mayor a cero";
+				mayores <- mayores + 1;
+			sino
+				escribir "menor a cero";
+				menores <- menores + 1;
+			finsi
+		finsi
+	FinPara
+
+	escribir "has metido ", ceros, "Ceros", mayores " Mayores que cero y ", menores " menores a cero bro.";
+FinProceso 
+
+Ejercicio 5
+Algoritmo que pida caracteres e imprima ‘VOCAL’ si son vocales y ‘NO VOCAL’ en
+caso contrario, el programa termina cuando se introduce un espacio.
+
+proceso 5 {
+	definir cosa como cadena;
+	repetir 
+		escribir "pasa una letra timidilla (con el espacio sales)";
+		leer cosa;
+		cosa <- mayúsculas(cosa);
+		si cosa = "A" O cosa="E" O cosa="I" O cosa="O" O cosa="U" entonces
+			escribir "VOCAL";
+		sino
+			escribir "NO VOCAL";
+		finsi
+	hasta que cosa = " ";
+FinProceso
+
+Ejercicio 6
+Escribir un programa que imprima todos los números pares entre dos números que se le
+pidan al usuario.
+
+proceso 6 {
+	definir num, cont, i como enteros;
+	escribir "pasa el numero de inicio y el final";
+	leer i, cont;
+	para i hasta cont hacer
+		si i%2=0 entonces
+			escribir i;
+		FinSi
+	FinPara
+
+	// VERSION ALTERNATIVA
+	Definir num,num1,num2 Como Entero;
+	Escribir Sin Saltar "Introduce el número 1:";
+	Leer num1;
+	Escribir Sin Saltar "Introduce el número 2:";
+	Leer num2;
+	Si num1 % 2 = 1 Entonces
+		num1<-num1+1;
+	FinSi
+	Para num<-num1 Hasta num2 Con Paso 2 Hacer
+			Escribir sin saltar num," ";
+	FinPara
+FinProceso
+
+Ejercicio 7
+Realizar un algoritmo que muestre la tabla de multiplicar de un número introducido por
+teclado.
+
+procesillo 7 {
+	
 
 
 
