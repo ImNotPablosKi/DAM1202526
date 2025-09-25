@@ -1187,18 +1187,64 @@ FinProceso
 
 
 
+------------------------------
+CADENAS
+------------------------------
 
 
 
+Ejercicio 6
+Realizar un programa que, dada una cadena de caracteres por caracteres, genere otra
+cadena resultado de invertir la primera.
 
+Proceso6Pag33
+	Definir cadena1, cadena2, palabra como Cadena;
+	Definir i, como Entero;
+	Escribir "Dime una palabra";
+	Leer cadena1;
+	cadena2 <- "";
+	Para i <- 0 hasta longitud(palabra)-1 con paso 1 hacer
+		cadena2 <- concatenar(cadena2,subcadena(cadena1,(longitud(palabra)-1)- i, (longitud(palabra)-1)i));
+	FinPara
+FinProceso
 
+Ejercicio 7
+Pide una cadena y dos caracteres por teclado (valida que sea un carácter), sustituye la
+aparición del primer carácter en la cadena por el segundo carácter.
 
+proceso 7 {
+	definir cadena, final como cadena;
+	definir car1, car2 como caracteres;
+	definir i como entero;
+	
+	escribir "palabrilla bro";
+	leer cadena;
+	
+	repetir
+		escribir "dime una letra a sustituir";
+		leer car1;
+		si longitud(car1) > 0 entonces
+			escribir "solo 1 carácter permitido";
+		finsi
+	hasta que longitud(car1)=1
 
+	repetir
+		escribir "dime el sustituto";
+		leer car2;
+		si longitud(car2) > 0 entonces
+			escribir "solo 1 carácter permitido";
+		finsi
+	hasta que longitud(car2)=1
 
-
-
-
-
+	para i <- 0 hasta longitud(cadena)-1 hacer
+		si subcadena(palabra,i,i) = car1 entonces
+			final <- concatenar(final,car2);
+		sino
+			final <- concatenar(final,subcadena(cadena,i,i));
+		finsi
+	finpara
+FinProceso
+	
 
 
 
