@@ -216,11 +216,11 @@ las dos variables.
 proceso 15 {
 	definir a, b, c como enteros;
 	Escribir "pasa numerines";
-	leer a, b;
+	leer a, b; 1,2
 	
-	c <- b;
-	a <- b;
-	b <- c;
+	c <- a; c <- 1;
+	a <- b; a <- 2;
+	b <- c; b <- 1;
 
 	Escribir "A la inversa, es: " a+c;
 FinProceso
@@ -1888,17 +1888,336 @@ Proceso 15
 FinProceso
 
 
+------------------------------------------------------------------------------
+FUNCIONES
+------------------------------------------------------------------------------
 
 
+Ejercicio 1
+Crea un procedimiento EscribirCentrado, que reciba como parámetro un texto y lo escriba
+centrado en pantalla (suponiendo una anchura de 80 columnas; pista: deberás escribir 40
+- longitud/2 espacios antes del texto). Además, subraya el mensaje utilizando el
+carácter =.
+
+Funcion CentrarTexto(texto)
+	Definir i, espacios como entero;
+	espacios <- 40 - (longitud(texto)-2);
+
+	// Primera mitad de espacios (Como un margin-left)
+	para i<-0 hasta espacios -1 con paso 1 hacer
+		Escribir sin saltar "";
+	FinPara
+
+	// Escribir la palabra que toque
+	Escribir texto;
+
+	// Segunda mitad de espacios OPCIONAL
+	Para i<-0 hasta espacios -1 con paso 1 hacer
+		Escribir sin saltar "";
+	FinPara
+
+	// Subrayado
+	Para i<-0 hasta longitud(texto)-1 con paso 1 hacer
+		Escribir sin saltar "=";
+	FinPara
+	Escribir "";
+FinFincion
+
+Proceso 1
+	Definir cad como cadena;
+	Escribir "Dime algo para centrartelo bro";
+	Leer cad;
+	CentrarTexto(cad);
+FinProceso
+
+Ejercicio 2
+Crea un programa que pida dos números enteros al usuario y diga si alguno de ellos es
+múltiplo del otro. Crea una función EsMultiplo que reciba los dos números, y devuelve
+si el primero es múltiplo del segundo.
+
+Funcion es <- EsMultiplo(a,b)
+	Definir es como cadena;
+	Si a%b=0 entonces
+		es <- "Efectivamente, es múltiplo";
+	SiNo
+		es <- "El primer numero no es multiplo del segundo"
+	FinSi
+FinFuncion
+
+Proceso 2 
+	Definir num1, num2 como entero
+	Escribir "dame dos numeros";
+	Leer num1, num2;
+	EsMultiplo(num1,num2);
+FinProceso
 
 
+Ejercicio 3
+Crear una función que calcule la temperatura media de un día a partir de la temperatura
+máxima y mínima. Crear un programa principal, que, utilizando la función anterior, vaya
+pidiendo la temperatura máxima y mínima de cada día y vaya mostrando la media. El
+programa pedirá el número de días que se van a introducir.
+
+Funcion tempMedia <- CalcularMedia(max,min)
+	
+	tempMedia <- (max+min)/2;
+
+FinFuncion
+
+Proceso 3
+	Definir i, dias, max, min como entero;
+	Escribir "Cuantos dias quieres?";
+	Leer dias;
+
+	Para i<-0 hasta dias -1 con paso 1 hacer
+		Escribir "Dame un maximo y un minimo";
+		Leer max, min;
+		Escribir "La media es ", tempMedia(max,min);
+	FinPara
+FinProceso
+
+Ejercicio 4
+Crea una función “ConvertirEspaciado”, que reciba como parámetro un texto y devuelve
+una cadena con un espacio adicional tras cada letra. Por ejemplo, “Hola, tú” devolverá
+“H o l a , t ú “. Crea un programa principal donde se use dicha función.
+
+PESCADO --> P 
+
+Funcion espaciado <- ConvertirEspaciado(texto)
+	
+	Definir espaciado como cadena;
+	Definir i como entero;
+	espaciado <- "";
+	Para i <- 0 hasta longitud(texto)-1 con paso 1 hacer
+		espaciado <- concatenar(espaciado,subcadena(texto,i,i));
+		espaciado <- concatenar(espaciado," ");
+	FinPara
+FinFuncion
+
+Proceso 4
+	Definir texto como cadena;
+	Escribir "Dame un texto";
+	Leer texto;
+	Escribir espaciado(texto);
+FinProceso
 
 
+Ejercicio 5
+Crea una función “calcularMaxMin” que recibe un arreglo con valores numérico y
+devuelve el valor máximo y el mínimo. Crea un programa que pida números por teclado
+y muestre el máximo y el mínimo, utilizando la función anterior.
+
+Funcion calcularMaxMin(vector,tamaño)
+	Definir i, max, min como entero;
+	max <- 0;
+	min <- vector[0]; // Pongo vector[0] para que así se compare directamente con la primera, si ya ese es el 			     minimo se queda así
+
+	para i<-0 hasta tamaño -1 con paso 1 hacer
+		Si vector[i] > max entonces
+			max <- vector[i];
+		FinSi
+		Si vector[i] < min entonces
+			min <- vector[i];
+		FinSi
+	FinPara
+	Escribir "El maximo es ", max, " y el minimo es ", min;
+FinFuncion
+
+Proceso 5
+	Definir i, vector, tamaño como entero;
+	Dimension vector[5];	
+	tamaño <- 5;
+
+	Para i<-0 hasta 4 con paso 1 hacer
+		Escribir "Rellena con numeros (no te pases de 100 anda porfa)";
+		Leer vector[i];
+	FinPara
+
+	calcularMaxMin(vector,tamaño);
+FinProceso
 
 
+Ejercicio 6
+Diseñar una función que calcule el área y el perímetro de una circunferencia. Utiliza dicha
+función en un programa principal que lea el radio de una circunferencia y muestre su área
+y perímetro.
+
+Funcion calcCircunferencia(radio)
+	Definir area, perimetro como real;
+	area <- π * radio^2;
+	perimetro <- 2 * π * radio;
+	Escribir "El area es de ", area, " y el perimetro es ", perimetro;
+FinFuncion
+
+Proceso 6
+	Definir radio como real;
+	Escribir "Pasa el radio vro";
+	Leer radio
+	calcCircunferencia(radio)
+FinProceso
 
 
+Ejercicio 7
+Crear una subrutina llamada “Login”, que recibe un nombre de usuario y una contraseña
+y te devuelve Verdadero si el nombre de usuario es “usuario1” y la contraseña es
+“asdasd”. Además, recibe el número de intentos que se ha intentado hacer login y si no
+se ha podido hacer login incremente este valor.
 
+Crear un programa principal donde se pida un nombre de usuario y una contraseña y se
+intente hacer login, solamente tenemos tres oportunidades para intentarlo.
+
+Funcion cosaLogin(user, pw, intentos por referencia)
+	Definir acceso como logico;
+	intentos <- 0;
+	
+	Si user="usuario1" Y pw="asdasd" entonces
+		acceso <- verdadero;
+	SiNo
+		acceso <- falso;
+		intentos <- intentos + 1;
+	FinSi
+FinFuncion
+
+Proceso 7
+	Definir user, pw como cadena;
+	Definir intentos como entero;
+	Definir log como logico;
+	
+	Repetir
+
+		Escribir "Introduce usuario y contraseña: ";
+		Leer user, pw;
+		log <- cosaLogin(user,pw, intentos);		
+
+	Hasta que log o intentos = 3
+
+	Si log = verdadero entonces
+		Escribir "Has accedido al sistema después de ", intentos, "intentos";
+	SiNo
+		Escribir "Se han agotado los intentos";
+	FinSi
+
+FinProceso
+
+
+Ejercicio 8
+Crear una función recursiva que permita calcular el factorial de un número. Realiza un
+programa principal donde se lea un entero y se muestre el resultado del factorial.
+
+Funcion fact <- calcFact(num)
+	Definir res como entero;
+	Si num=0 O num=1 entonces
+		res <- 1;
+	SiNo
+		res <- res * calcFact(num-1);
+	FinSi
+FinFuncion
+
+Proceso 8
+	Definir num como entero;
+	Escribir "Dame un numero para hacerlo factorial";
+	Leer num;
+	Escribir "El factorial de ", num, " es " fact(num);
+FinProceso
+
+Ejercicio 9
+Crear una función que calcule el MCD de dos números por el método de Euclides. El
+método de Euclides es el siguiente:
+ Se divide el número mayor entre el menor.
+ Si la división es exacta, el divisor es el MCD.
+ Si la división no es exacta, dividimos el divisor entre el resto obtenido y se continúa de
+esta forma hasta obtener una división exacta, siendo el último divisor el MCD.
+Crea un programa principal que lea dos números enteros y muestre el MCD.
+
+Funcion intercambiar(mayor por referncia, menor por referencia)
+	Definir a como Real;
+	Si menor > mayor entonces
+		a <- mayor;
+		mayor <- menor;
+		menor <- a;
+	FinSi
+FinFuncion
+
+Funcion MCD <- CalcularMCD(num1,num2)
+	Definir MCD, resto como Real;
+	intercambiar(num1,num2);
+	resto <- num1 % num2;
+	Si num1 % num2 = 0 entonces
+		MCD <- num2;
+	SiNo
+		MCD <- CalcularMCD(num2,resto);
+	FinSi
+FinFuncion
+
+Proceso9Pag45
+	Definir numero1, numero2 como Real;
+	Escribir "Dime dos numeros y te digo su MCD";
+	Leer numero1, numero2;
+	Escribir "Su MCD es: " CalcularMCD(numero1,numero2);
+FinProceso
+
+Ejercicio 11
+El día juliano correspondiente a una fecha es un número entero que indica los días que
+han transcurrido desde el 1 de enero del año indicado. Queremos crear un programa
+principal que al introducir una fecha nos diga el día juliano que corresponde. Para ello
+podemos hacer las siguientes subrutinas:
+	 LeerFecha: Nos permite leer por teclado una fecha (día, mes y año).
+	 DiasDelMes: Recibe un mes y un año y nos dice los días de ese mes en ese año.
+	 EsBisiesto: Recibe un año y nos dice si es bisiesto.
+	 Calcular_Dia_Juliano: recibe una fecha y nos devuelve el día juliano.
+
+Funcion es <- Esbisiesto(año)
+    Definir es como logico;
+    Si (año % 4 = 0 y año % 100 !=0) o año % 400 = 0 Entonces
+                es <- verdadero;
+        SiNo
+             es <- falso;
+        FinSi
+FinFuncion
+
+Funcion dias <- DiasDelMes(mes,año)
+    Definir dias como entero;
+    Segun mes hacer
+        1,3,5,7,8,10,12: dias <- 31;
+        2: Si Esbisiesto(año) Entonces
+            dias <- 29;
+           SiNo
+            dias <- 28;
+           FinSi
+        4,6,9,11: dias <- 30;
+    FinSegun
+FinFuncion
+
+
+Funcion leerfecha (dia por referencia,mes por referencia,año por referencia)
+    definir valido como logico
+    valido <- verdadero
+    Repetir
+        Escribir "Pasa el dia, el mes y el año";
+        leer dia,mes,año;
+        Si mes > 12 o mes < 1 o dia < 1 o dia > DiasDelMes(mes,año) Entonces
+            valido <- falso;
+            Escribir "La fecha indicada es invalida, repite"
+        FinSi
+    Hasta que valido 
+
+
+Finfuncion
+                        25/08/2007
+funcion  dj<- CalcularDiaJuliano(dia,mes,año)
+    Definir dj como entero;
+    Definir i como entero;
+    dj <- dia;
+    Para i <- 1 hasta mes-1 Con paso 1 hacer
+        dj <- dj + DiasDelmes(i,año)
+    FinPara
+FinFuncion
+
+Proceso 11 
+    Definir dia,mes,año como entero;
+    leerfecha(dia,mes,año);
+    Escribir CalcularDiaJuliano(dia,mes,año)
+FinProceso
 
 
 
