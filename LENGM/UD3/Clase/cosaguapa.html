@@ -43,6 +43,7 @@
             background-color: red;
             color: aliceblue;
             border-color: aliceblue;
+            cursor: pointer;
         }
 
         .cosa {
@@ -83,24 +84,61 @@
         }
 
         .menu {
-            border-radius: 5px;
+            border-radius: 10px;
             border-style: solid;
             border-color: pink;
             display: block;
-            font-weight: lighter;
             font-family: Cascadia Code;
+            padding: 1cm;
+        }
+
+        .linksMenu1 {
+            font-weight: bold;
+            font-size: larger;
+            text-decoration: none;
+            color: black;
+            border: 3px;
+            border-color: black;
+            border-style: solid;
+            border-radius: 5px;
+            padding: 10px;
+            transition: all 0.25s;
+        }
+
+        .linksMenu2 {
+            font-weight: bold;
+            font-size: larger;
+            text-decoration: none;
+            color: black;
+            border: 3px;
+            border-color: black;
+            border-style: solid;
+            border-radius: 5px;
+            padding: 10px;
+            transition: all 0.25s;
+        }
+
+        .linksMenu1:hover {
+            transform: scale(1.2);
+            color: brown;
+            border-color: brown;
+        }
+
+         .linksMenu2:hover {
+            transform: scale(1.2);
+            color: brown;
+            border-color: brown;
         }
     </style>
 </head>
 
 <body>
     <nav class="menu">
-        <ul>
-            <li><a href="#listas">Ir a Listas...</a></li>
-        </ul>
-        <ul>
-            <li><a href="#enlaces">Ir a Enlaces...</a></li>
-        </ul>
+        <center>
+            <a class="linksMenu1" href="#listas">Ir a Listas...</a></li>
+        
+            <a class="linksMenu2" href="#enlaces">Ir a Enlaces...</a></li>
+        </center>
     </nav>
     <div class="cont1">
         <h2 class="titulo">- // BIENVENIDO A LO QUE QUIERA QUE SEA ESTO!!!! // -</h2>
