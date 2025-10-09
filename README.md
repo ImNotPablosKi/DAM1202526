@@ -1,1 +1,5 @@
-Repositorio para mi desgracia personal.
+##########################################
+#                                        #
+# Repositorio para mi desgracia personal #
+#                                        #
+##########################################
