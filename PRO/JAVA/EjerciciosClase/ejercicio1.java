@@ -1,4 +1,4 @@
-package EjerciciosClase;
+package ejerciciosClase;
 import java.util.*;
 public class ejercicio1 {
     public static void main(String[] args) {

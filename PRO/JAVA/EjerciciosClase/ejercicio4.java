@@ -1,4 +1,4 @@
-package EjerciciosClase;
+package ejerciciosClase;
 
 public class ejercicio4 {
 
