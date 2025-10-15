@@ -27,10 +27,14 @@ public class caseSwitch {
                 System.out.println("El resultado es: " + (num1 * num2));
                 break;
             case 4:
-                if (num2 > num1) {
+                if (num2 == 0) {
                     System.out.println("Fatal: No es posible dividir por 0");
                 } else {
-                    System.out.println("El resultado es: " + (num1 / num2));
+                    if (num2 > num1) {
+                        System.out.println("El resultado es: " + (num2 / num1));
+                    } else {
+                        System.out.println("El resultado es: " + (num1 / num2));
+                    }
                 }
                 break;
             default:
