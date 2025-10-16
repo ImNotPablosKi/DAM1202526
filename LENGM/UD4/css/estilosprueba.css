@@ -189,3 +189,13 @@ h3 {
             color: white;
             background-color: rgb(175, 175, 175);;
         }
+
+        button > a {
+            text-decoration: none;
+            color: black
+        }
+
+        button > a:hover {
+            text-decoration: none;
+            color: white
+        }

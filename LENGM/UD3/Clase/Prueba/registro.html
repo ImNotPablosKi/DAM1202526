@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NIGGER REGISTRY</title>
+    <link rel="stylesheet" href="css/estilosprueba.css">
+</head>
+
+<body>
+    <h2 class="tituloForm" style="border: 3px solid black; padding: 15px; border-radius: 10px;">Formulario de Registro:</h2>
+    <div class="clase">
+        <div class="form">
+            <form action="">
+                <fieldset>
+                    <legend>- Datos Personales -</legend>
+                    <p>
+                    <p>
+                        <label for="name">Nombre: </label>
+                        <input type="text" name="nombre" id="name" placeholder="Introduzca su nombre...">
+                    </p>
+                    <p>
+                        <label for="surname">Apellido(s): </label>
+                        <input type="text" name="apellidos" id="surname" placeholder="Introduzca sus apellidos...">
+                    </p>
+                    <p>
+                        <label for="mail">Correo Electrónico: </label>
+                        <input type="email" name="Correo" id="mail" placeholder="johndoe@example.com">
+                    </p>
+                    <p>
+                        <label for="pass">Contraseña: </label>
+                        <input type="password" name="Contraseña" id="pass">
+                    </p>
+                    </p>
+                    <p>
+                        <label for="ncto">Fecha de Nacimiento: </label>
+                        <input type="date" name="Nacimiento" id="ncto" max="2025-01-01" min="1950-01-01">
+                    </p>
+                    <p>
+                        <label for="tfno">Móvil: </label>
+                        <input type="tel" name="tfno" id="tfno" placeholder="Syntax: XXX XX XX XX" maxlength="9" pattern="[0-9]{9}"> <!-- Entre o y 9, se van a meter 9 carácteres-->
+                    </p>
+                    <p>
+                        <p>Has estudiado programación alguna vez?</p>
+                        <input type="radio" name="estudios" id="si" value="SI">
+                        <label for="si">Si.</label><br>
+                        <input type="radio" name="estudios" id="no" value="NO">
+                        <label for="no">No.</label><br>
+                    </p>
+                    <p>
+                        <p>Selecciona tus asignaturas favoritas: </p><br>
+                        <input type="checkbox" name="favmod" id="bbdd" value="BBDD">
+                        <label for="bbdd">BBDD</label><br>
+                        <input type="checkbox" name="favmod" id="lgm" value="LMSGI">
+                        <label for="lgm">LMSGI</label><br>
+                        <input type="checkbox" name="favmod" id="dig" value="DIGITALIZACIÓN">
+                        <label for="dig">DIGITALIZACIÓN</label><br>
+                        <input type="checkbox" name="favmod" id="ent" value="ENTORNOS">
+                        <label for="ent">ENTORNOS</label><br>
+                        <input type="checkbox" name="favmod" id="pro" value="PROGRAMACIÓN">
+                        <label for="pro">PROGRAMACIÓN</label><br>
+                    </p>
+                    <p>
+                        <label for="curso">Selecciona tu Curso...</label>
+                        <select name="curso" id="curso">
+                            <option value="">--Selecciona tu curso--</option>
+                            <optgroup label="SMR">
+                                <option value="1smr">1º de SMR</option>
+                                <option value="2smr">2º de SMR</option>
+                            </optgroup>
+                            <optgroup label="DAM">
+                                <option value="1dam">1º de DAM</option>
+                                <option value="2dam">2º de DAM</option>
+                            </optgroup>
+
+                        </select>
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>- Aficiones / Gustos -</legend>
+                    <p>
+                        <label for="color">Color favorito: </label>
+                        <input type="color" name="color" id="color">
+                    </p>
+                </fieldset>
+                <fieldset>
+                    <legend>Bum ass filter</legend>
+                    <p>
+                        <label for="cvitae">Sube el CV (PDF), que se vea que trabajas...</label><br>
+                        <input type="file" name="cv" id="cvitae" accept=".pdf"> <!-- Para que solo acepte archivos .pdf -->
+                    </p>
+                </fieldset>
+                <p>
+                        <input type="checkbox" name="term" id="term" required> <!-- Para obligar -->
+                        <label for="term">Acepto los términos y Condidiones</label>
+                    </p>
+                <br><br>
+                <input type="submit" value="Registrarse">
+                <input type="reset" value="Borrar Datos">
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
