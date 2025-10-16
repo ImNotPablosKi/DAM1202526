@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="EER">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/BBDD/UD2/EER.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
