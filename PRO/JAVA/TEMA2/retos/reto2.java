@@ -29,7 +29,7 @@ public class reto2 {
 
             // Comprobar que no pone una letra
             while (!sc.hasNextInt()){
-                System.out.println("Indica un numero subnormal");
+                System.out.println("Indica un numero subnormal :3");
                 sc.next();
             }
 
