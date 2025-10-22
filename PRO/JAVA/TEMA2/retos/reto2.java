@@ -2,178 +2,145 @@ package TEMA2.retos;
 import java.util.*;
 
 public class reto2 {
-    public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-
-        boolean exit = false;
-        String opt;
-
-
+    public static void main(String[] args) throws InterruptedException {
+        Scanner leer = new Scanner(System.in);
+        boolean salir = false;
+        boolean correcto;
+        int num1 = 0;
+        int num2 = 0;
+        String opcion;
         do {
-            int num1 = 0;
-            int num2 = 0;
-            double div = 0;
-            double numR = 0;
-            double raiz = 0;
-            double pot = 0;
 
-            System.out.println("Seleccione la opción deseada: ");
+            correcto = false;
+
+            System.out.println("Que Operación desea realizar?:");
             System.out.println("==============================");
-            System.out.println("1. Sumar");
-            System.out.println("2. Restar");
-            System.out.println("3. Multiplicar");
-            System.out.println("4. Dividir");
-            System.out.println("5. Raíz Cuadrada");
-            System.out.println("6. Potencia / Elevación");
-            System.out.println("0. SALIR");
+            System.out.println("Suma (+)");
+            System.out.println("Resta (-)");
+            System.out.println("Multiplicación (x)");
+            System.out.println("División (/)");
+            System.out.println("Raíz cuadrada (2)");
+            System.out.println("Potencia (^)");
+            System.out.println("Salir (S)");
+            opcion = leer.next();
+            leer.nextLine();
 
-            // Comprobar que no pone una letra
-            while (!sc.hasNextInt()){
-                System.out.println("Indica un numero subnormal :3");
-                sc.next();
+            System.out.println("SELECCIONADO: " + opcion);
+
+            if (opcion.equals("+") || opcion.equals("-") || opcion.equalsIgnoreCase("x") || opcion.equals("/") || opcion.equals("^")) {
+
+                do {
+
+                    System.out.print("Dime el numero 1: ");
+
+                    if (!leer.hasNextInt()) {
+
+                        System.out.println("Dato inválido, introduce un número entero porfa :3");
+                        leer.nextLine();
+
+                    } else {
+
+                        num1 = leer.nextInt();
+                        leer.nextLine();
+
+                        do {
+                            System.out.print("Dime el número 2: ");
+                            if (!leer.hasNextInt()) {
+
+                                System.out.println("Que introduzcas un número válido cateto :3");
+                                leer.nextLine();
+
+                            } else {
+
+                                num2 = leer.nextInt();
+                                leer.nextLine();
+                                correcto = true;
+
+                            }
+
+                        } while (!correcto);
+
+                    }
+
+                } while (!correcto);
+
+            } else if (opcion.equals("2")) {
+
+                do {
+
+                    System.out.println("Dime el número");
+                    if (!leer.hasNextInt()) {
+
+                        System.out.println("Inválido, introduce un número entero porfavor :3");
+                        leer.nextLine();
+
+                    } else {
+
+                        num1 = leer.nextInt();
+                        leer.nextLine();
+                        correcto = true;
+
+                    }
+
+                } while (!correcto);
+
             }
+            System.out.println("-------------------------------------------------------------------");
+            switch (opcion) {
 
-            int cosa = sc.nextInt();
-
-            switch (cosa){
-                case 1:
-                    System.out.println("Introduzca el primer valor");
-                    num1 = sc.nextInt();
-
-                    System.out.println("Introduzca el segundo valor");
-                    num2 = sc.nextInt();
-
-                    System.out.println("Resultado: " + (num1+num2));
-
-                    System.out.println("Desea volver a calcular? (S/N): ");
-                    opt = sc.next();
-
-                    if (opt.equalsIgnoreCase("S")) {
-                        exit = false;
-                    } else if (opt.equalsIgnoreCase("N")) {
-                        exit = true;
-                    } else {
-                        System.out.println("Valor inválido.");
-                        exit = true;
-                    }
+                case "+":
+                    System.out.println(num1 + " + " + num2 +" = " + (num1 + num2));
                     break;
-                case 2:
-                    System.out.println("Introduzca el primer valor");
-                    num1 = sc.nextInt();
 
-                    System.out.println("Introduzca el segundo valor");
-                    num2 = sc.nextInt();
-
-                    System.out.println("Resultado: " + (num1-num2));
-
-                    System.out.println("Desea volver a calcular? (S/N): ");
-                    opt = sc.next();
-
-                    if (opt.equalsIgnoreCase("S")) {
-                        exit = false;
-                    } else if (opt.equalsIgnoreCase("N")) {
-                        exit = true;
-                    } else {
-                        System.out.println("Valor inválido.");
-                        exit = true;
-                    }
+                case "-":
+                    System.out.println(num1 + " - " + num2 + " = " + (num1 - num2));
                     break;
-                case 3:
-                    System.out.println("Introduzca el primer valor");
-                    num1 = sc.nextInt();
 
-                    System.out.println("Introduzca el segundo valor");
-                    num2 = sc.nextInt();
-
-                    System.out.println("Resultado: " + (num1*num2));
-
-                    System.out.println("Desea volver a calcular? (S/N): ");
-                    opt = sc.next();
-
-                    if (opt.equalsIgnoreCase("S")) {
-                        exit = false;
-                    } else if (opt.equalsIgnoreCase("N")) {
-                        exit = true;
-                    } else {
-                        System.out.println("Valor inválido.");
-                        exit = true;
-                    }
+                case "X","x":
+                    System.out.println(num1 + " x " + num2 + " = " + (num1 * num2));
                     break;
-                case 4:
-                    System.out.println("Introduzca el primer valor");
-                    num1 = sc.nextInt();
 
-                    System.out.println("Introduzca el segundo valor");
-                    num2 = sc.nextInt();
-
+                case "/":
                     if (num2 == 0) {
-                        System.out.println("*WARNING* (FATAL) *WARNING* ABORTANDO: No es posible dividir por 0...");
+
+                        System.out.println("*WARNING* ABORTANDO *WARNING*: [NO] se puede dividir entre 0 [INVIABLE][CATÁSTROFE INICIADA]");
+
                     } else {
-                        div = (double) num1 / num2;
-                        System.out.println("Resultado: " + div);
+
+                        System.out.println(num1 + " / " + num2 + " = " + (num1 / num2));
+
                     }
 
-                    System.out.println("Desea volver a calcular? (S/N): ");
-                    opt = sc.next();
-
-                    if (opt.equalsIgnoreCase("S")) {
-                        exit = false;
-                    } else if (opt.equalsIgnoreCase("N")) {
-                        exit = true;
-                    } else {
-                        System.out.println("Valor inválido.");
-                        exit = true;
-                    }
                     break;
-                case 5:
-                    System.out.println("Introduzca el valor base de la raíz: ");
-                    numR = sc.nextDouble();
-                    raiz = Math.sqrt(numR);
-                    System.out.println("Resultado: " + raiz);
 
-                    System.out.println("Desea volver a calcular? (S/N): ");
-                    opt = sc.next();
-
-                    if (opt.equalsIgnoreCase("S")) {
-                        exit = false;
-                    } else if (opt.equalsIgnoreCase("N")) {
-                        exit = true;
-                    } else {
-                        System.out.println("Valor inválido.");
-                        exit = true;
-                    }
+                case "2":
+                    System.out.println("La raíz cuadrada de " + num1 + " es " + Math.sqrt(num1));
                     break;
-                case 6:
-                    System.out.println("Introduzca el valor a elevar: ");
-                    num1 = sc.nextInt();
 
-                    System.out.println("Introduzca el exponente: ");
-                    num2 = sc.nextInt();
-
-                    pot = Math.pow(num1, num2);
-                    System.out.println("Resultado: " + pot);
-
-                    System.out.println("Desea volver a calcular? (S/N): ");
-                    opt = sc.next();
-
-                    if (opt.equalsIgnoreCase("S")) {
-                        exit = false;
-                    } else if (opt.equalsIgnoreCase("N")) {
-                        exit = true;
-                    } else {
-                        System.out.println("Valor inválido.");
-                        exit = true;
-                    }
+                case "^":
+                    System.out.println(num1 + " ^ " + num2 + " = " + Math.pow(num1,num2));
                     break;
-                case 0:
-                    exit = true;
+                case "S":
+                    salir = true;
                     break;
+
                 default:
-                    System.out.println("Valor Inválido! :C");
-                    exit = false;
+                    System.out.println("*ALERTA* OPCIÓN INVÁLIDA *ALERTA* [EMPEZANDO AUTODESTRUCCIÓN...]");
+                    for (int i = 5; i > 0 ; i--) {
+                        System.out.println(i + "...");
+                        Thread.sleep(800);
+                    }
                     break;
             }
-        } while (!exit);
+
+            if (salir) {
+
+                System.out.println("Saliendo...");
+
+            }
+
+
+        } while (!salir);
 
     }
 }
