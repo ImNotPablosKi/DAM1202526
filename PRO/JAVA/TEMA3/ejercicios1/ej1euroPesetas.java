@@ -1,4 +1,4 @@
-package TEMA3;
+package TEMA3.ejercicios1;
 import java.util.*;
 
 public class ej1euroPesetas {

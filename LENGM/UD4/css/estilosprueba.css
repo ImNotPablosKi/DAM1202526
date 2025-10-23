@@ -8,6 +8,11 @@ h3 {
             display: block;
         }
 
+        mark {
+            background-color: deepskyblue;
+            padding: 5px;
+        }
+
         div.cont {
             justify-self: center;
             margin: 1cm;
