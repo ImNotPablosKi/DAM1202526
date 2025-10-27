@@ -1,0 +1,30 @@
+18.
+No va
+
+19.
+No va
+
+20.
+No va
+
+21.
+No va
+
+22.
+No va
+
+23.
+Escribe hasta el nº 4 MENOS el número 2, pues el continue omite esa iteración y sigue a la siguiente.
+
+24.
+Escribe hasta el 2, porque el break rompe la iteración por completo.
+
+25.
+Los números del 1 al 4, nunca va a ser 10.
+
+26.
+No va
+
+27.
+Una tabla de 3 filas y 5 columnas llenas de asteriscos (*). "\n" significa un salto de línea.
+
