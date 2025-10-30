@@ -26,7 +26,7 @@ public class ej33 {
 
             } else {
 
-                System.out.println("Creo que eso NO es válido, repite");
+                System.out.println("Eso NO es válido lilvro, repite");
                 sc.nextLine();
 
             }
