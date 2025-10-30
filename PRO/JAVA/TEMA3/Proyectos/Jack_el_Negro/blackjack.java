@@ -98,7 +98,7 @@ public class blackjack {
         } else if (puntuacionBanca > 21) {
             System.out.println("La banca (psoe) se ha pasado. Enhorabuena bro.");
         } else if (puntuacionJugador > puntuacionBanca) {
-            System.out.println("Ganas con: " + puntuacionJugador + " puntos.");
+            System.out.println("Ganas sobre la banca con: " + puntuacionJugador + " puntos.");
         } else if (puntuacionBanca > puntuacionJugador) {
             System.out.println("Pierdes, Gana la banca con: " + puntuacionBanca + " puntos.");
         } else {
