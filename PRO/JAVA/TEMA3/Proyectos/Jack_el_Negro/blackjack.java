@@ -57,7 +57,7 @@ public class blackjack {
     }
 
     public static void mostrarMano(ArrayList<Double> mano) {
-        System.out.println("Tienes las siguientes cartas: " + mano);
+        System.out.println("Cartas: " + mano);
         System.out.println("Total: " + valorMano(mano));
     }
 
@@ -72,6 +72,9 @@ public class blackjack {
                 mostrarMano(mano);
                 if (valorMano(mano) > 21) {
                     System.out.println("Te has pasado de 21, Perdedor... (jijijija.mp3)");
+                    return;
+                } else if (valorMano(mano) == 21) {
+                    System.out.println("BLACKJACK, Enhorabuena!");
                     return;
                 }
             } else if (opcion != 'S') {
@@ -91,7 +94,7 @@ public class blackjack {
         int puntuacionJugador = valorMano(manoJugador);
         int puntuacionBanca = valorMano(manoBanca);
         if (puntuacionJugador > 21) {
-            System.out.println("Te has Pasado... Gana la banca (psoe)");
+            System.out.println("Gana la banca (psoe)");
         } else if (puntuacionBanca > 21) {
             System.out.println("La banca (psoe) se ha pasado. Enhorabuena bro.");
         } else if (puntuacionJugador > puntuacionBanca) {
