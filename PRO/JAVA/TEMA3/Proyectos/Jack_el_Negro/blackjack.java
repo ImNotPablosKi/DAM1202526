@@ -75,7 +75,7 @@ public class blackjack {
                     return;
                 } else if (valorMano(mano) == 21) {
                     System.out.println("BLACKJACK, Enhorabuena!");
-                    return;
+                    break;
                 }
             } else if (opcion != 'S') {
                 System.out.println("Opción inválida. Inténtalo de nuevo.");
@@ -151,7 +151,8 @@ public class blackjack {
                     turnoJugador(manoJugador);
 
                     // Si no se te ha ido a pernambuco, juega la banca
-                    if (valorMano(manoJugador) <= 21) {
+                    if (valorMano(manoJugador) < 21) {
+                        System.out.print("Banca, ");
                         turnoBanca(manoBanca);
                     }
 
