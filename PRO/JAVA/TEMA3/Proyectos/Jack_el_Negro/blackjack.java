@@ -168,6 +168,7 @@ public class blackjack {
                         char jugarOtra = sc.next().toUpperCase().charAt(0);
                         sc.nextLine();
                         if (jugarOtra != 'S') {
+                            System.out.println("Later nigga");
                             jugando = false;
                         }
                     }
