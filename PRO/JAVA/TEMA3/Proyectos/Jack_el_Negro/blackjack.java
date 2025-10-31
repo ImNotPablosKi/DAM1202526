@@ -161,11 +161,17 @@ public class blackjack {
 
                     // Preguntarle si quiere ser ludópata (OBVIAMENTE)
                     System.out.println("¿Desea jugar otra partida? (El 99% de jugadores para JUSTO antes de su GRAN momento...) (S/N)");
-                    char jugarOtra = sc.next().toUpperCase().charAt(0);
-                    if (jugarOtra != 'S') {
+                    if (sc.hasNextDouble()) {
+                        System.out.println("Claramente, No sabes leer. Fuera de mi puto casino.");
                         jugando = false;
+                    } else {
+                        char jugarOtra = sc.next().toUpperCase().charAt(0);
+                        sc.nextLine();
+                        if (jugarOtra != 'S') {
+                            jugando = false;
+                        }
                     }
-                    break;
+                        break;
                 }
                 case 2:
                     reglas();
