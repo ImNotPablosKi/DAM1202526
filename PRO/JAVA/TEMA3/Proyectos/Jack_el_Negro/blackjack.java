@@ -33,7 +33,7 @@ public class blackjack {
         return (int) (Math.random() * (10-1) + 1);
     }
 
-    public static int valorMano(ArrayList<Double> mano) {
+    public static int valorMano(ArrayList<Integer> mano) {
         int total = 0;
         int ases = 0;
         for (double carta : mano) {
@@ -56,19 +56,19 @@ public class blackjack {
         return total;
     }
 
-    public static void mostrarMano(ArrayList<Double> mano) {
+    public static void mostrarMano(ArrayList<Integer> mano) {
         System.out.println("Cartas: " + mano);
         System.out.println("Total: " + valorMano(mano));
     }
 
-    public static void turnoJugador(ArrayList<Double> mano) {
+    public static void turnoJugador(ArrayList<Integer> mano) {
         Scanner sc = new Scanner(System.in);
         char opcion;
         do {
             System.out.println("Qué vas a hacer ahora eh? (P para pedir, S para plantarse (pussy) ): ");
             opcion = sc.next().toUpperCase().charAt(0);
             if (opcion == 'P') {
-                mano.add(repartirCarta());
+                mano.add((int) repartirCarta());
                 mostrarMano(mano);
                 if (valorMano(mano) > 21) {
                     System.out.println("Te has pasado de 21, Perdedor... (jijijija.mp3)");
@@ -83,14 +83,14 @@ public class blackjack {
         } while (opcion != 'S');
     }
 
-    public static void turnoBanca(ArrayList<Double> manoBanca) {
+    public static void turnoBanca(ArrayList<Integer> manoBanca) {
         while (valorMano(manoBanca) < 17) {
-            manoBanca.add(repartirCarta());
+            manoBanca.add((int) repartirCarta());
         }
         mostrarMano(manoBanca);
     }
 
-    public static void compararManos(ArrayList<Double> manoJugador, ArrayList<Double> manoBanca) {
+    public static void compararManos(ArrayList<Integer> manoJugador, ArrayList<Integer> manoBanca) {
         int puntuacionJugador = valorMano(manoJugador);
         int puntuacionBanca = valorMano(manoBanca);
         if (puntuacionJugador > 21) {
@@ -134,13 +134,13 @@ public class blackjack {
             switch (eleccion) {
 
                 case 1: {
-                    ArrayList<Double> manoJugador = new ArrayList<>();
-                    ArrayList<Double> manoBanca = new ArrayList<>();
+                    ArrayList<Integer> manoJugador = new ArrayList<>();
+                    ArrayList<Integer> manoBanca = new ArrayList<>();
 
                     // Repartir las cartitas
                     for (int i = 0; i < 2; i++) {
-                        manoJugador.add(repartirCarta());
-                        manoBanca.add(repartirCarta());
+                        manoJugador.add((int) repartirCarta());
+                        manoBanca.add((int) repartirCarta());
                     }
 
                     // Mostrar manitas
