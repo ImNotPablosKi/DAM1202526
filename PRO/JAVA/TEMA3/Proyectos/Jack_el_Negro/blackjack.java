@@ -188,6 +188,8 @@ public class blackjack {
 
         } while (jugando);
 
+        // Cerramos pq quita puntos
+        sc.close();
     }
 
 }
