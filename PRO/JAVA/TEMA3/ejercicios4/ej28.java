@@ -20,7 +20,7 @@ public class ej28 {
             for (int j = 0; j < ancho ; j++) {
                 System.out.print("*");
             }
-            ancho -= 1;
+            ancho -= 1; // Ancho = ancho - 1 (abreviamos)
             System.out.println(" ");
         }
 
