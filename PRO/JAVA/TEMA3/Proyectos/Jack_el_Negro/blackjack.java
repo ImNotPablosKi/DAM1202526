@@ -123,6 +123,7 @@ public class blackjack {
             System.out.println("1 - Jugar Partida");
             System.out.println("2 - Ver Reglas del Juego");
             System.out.println("3 - Salir (Bum ass)");
+            System.out.print("Su elección: ");
 
             while (!sc.hasNextInt()) {
                 System.out.println("Fatal: Es necesario un valor numérico:");
