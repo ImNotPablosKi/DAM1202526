@@ -167,8 +167,11 @@ public class blackjack {
                     } else {
                         char jugarOtra = sc.next().toUpperCase().charAt(0);
                         sc.nextLine();
-                        if (jugarOtra != 'S') {
+                        if (jugarOtra == 'N') {
                             System.out.println("Later nigga");
+                            jugando = false;
+                        } else if (jugarOtra != 'S') {
+                            System.out.println("Claramente, No sabes leer. Fuera de mi puto casino.");
                             jugando = false;
                         }
                     }
