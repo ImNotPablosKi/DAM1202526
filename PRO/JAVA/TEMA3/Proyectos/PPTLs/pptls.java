@@ -1,4 +1,4 @@
-package PPTLs;
+package TEMA3.Proyectos.PPTLs;
 import  java.util.*;
 
 public class pptls {
@@ -22,7 +22,6 @@ public class pptls {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
-        boolean correcto = false;
 
         do {
             int eleccion;
@@ -35,26 +34,15 @@ public class pptls {
             System.out.println("============================ 0. SALIR ==============================");
             System.out.print("Escoja una Opción: ");
 
-            do {
-                if (!sc.hasNextInt()) {
-                    System.out.println(" * Valor Inválido * ");
-                    esperar(1);
-                    System.out.print("Escoja una Opción: ");
-                } else {
-                    eleccion = sc.nextInt();
-                    do {
-                        if (eleccion < 0 || eleccion > 3) {
-                            System.out.println(" * Valor Inválido * ");
-                            esperar(1);
-                            System.out.print("Escoja una Opción: ");
+           while (!sc.hasNextInt()) {
+               System.out.println(" * Valor Incorrecto! * ");
+               esperar(0.7);
+               System.out.println("Escoja una Opción: ");
+               sc.nextLine();
+           }
+            
+           eleccion = sc.nextInt();
 
-                        } else {
-                            correcto = true;
-                        }
-                    } while (!correcto);
-                }
-                sc.nextLine();
-            } while (!correcto);
 
         } while (!salir);
 
