@@ -40,7 +40,7 @@ public class pptls {
                System.out.println("Escoja una Opción: ");
                sc.nextLine();
            }
-            
+
            eleccion = sc.nextInt();
 
 
