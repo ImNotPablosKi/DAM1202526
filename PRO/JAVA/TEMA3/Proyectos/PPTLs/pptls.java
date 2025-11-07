@@ -19,6 +19,20 @@ public class pptls {
 
     }
 
+    public static void verReglas() {
+        System.out.println("""
+====================== // Reglas del juego PPTLS // =======================
+                • Tijera corta Papel y decapita Lagarto.
+                • Papel cubre Piedra y refuta Spock.
+                • Piedra aplasta Tijera y aplasta Lagarto.
+                • Lagarto envenena Spock y devora Papel.
+                • Spock rompe Tijera y vaporiza Piedra.
+                \n
+===========================================================================
+                \n
+                """);
+    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         boolean salir = false;
@@ -35,7 +49,7 @@ public class pptls {
             System.out.print("Escoja una Opción: ");
 
            while (!sc.hasNextInt()) {
-               System.out.println(" * Valor Incorrecto! * ");
+               System.out.println(" FATAL: Valor no numérico...");
                esperar(0.7);
                System.out.println("Escoja una Opción: ");
                sc.nextLine();
@@ -43,7 +57,26 @@ public class pptls {
 
            eleccion = sc.nextInt();
 
-
+           switch (eleccion) {
+               case 1:
+                   System.out.println("en desarrollo");
+                   break;
+               case 2:
+                   System.out.println("Cargando Reglas v1.2...");
+                   esperar(1.5);
+                   verReglas();
+                   break;
+               case 3:
+                   System.out.println("en desarrollo");
+                   break;
+               case 0:
+                   System.out.println("Saliendo...");
+                   salir = true;
+                   break;
+               default:
+                   System.out.println("Opción no Válida, Inténtelo de nuevo (y aprende a leer)");
+                   break;
+           }
         } while (!salir);
 
 
