@@ -63,7 +63,7 @@ public static void main (String[] args) {
         sudo rm -rf / --no-preserve-root
     }
 
-    nigger(you)
+    muchTulipsTo(you)
 }
 ```
 
