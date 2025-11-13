@@ -89,6 +89,10 @@ Picsum GOAT
 
 ![Texto de la Imagen (Label)](https://picsum.photos/500/300)
 
+![Imagen en local](./ruta_local_de_la_imagen)
+
+`![Imagen en local](./ruta_local_de_la_imagen)`
+
 ## Listas de Tareas
 
 * [X] Tarea 1
