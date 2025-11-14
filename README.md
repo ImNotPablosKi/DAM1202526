@@ -9,5 +9,6 @@ public class DAM12526 {
         while (true) {
           kill(myself)
         }
+    }
 }
 ```
