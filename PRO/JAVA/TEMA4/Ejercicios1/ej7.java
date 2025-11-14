@@ -9,17 +9,21 @@ public class ej7 {
 
             System.out.println("Suspenso...");
 
-        } else if (nota >= 5 || nota < 7) {
+        } else if (nota >= 5 && nota < 7) {
 
             System.out.println("Aprobado");
 
-        } else if (nota >= 7 || nota < 9) {
+        } else if (nota >= 7 && nota < 9) {
 
             System.out.println("Notable!");
 
+        } else if (nota >= 9 && nota < 10) {
+
+            System.out.println("Sobresaliente!!! ☺ ");
+
         } else {
 
-            System.out.println("Sobresaliente!!!! ☺☺☺☺☺☺ :steamhappy:");
+            System.out.println(" ☺☺☺☺ UN PUTO 10 JODER :STEAMHAPPY: ☺☺☺☺");
 
         }
 
@@ -37,23 +41,19 @@ public class ej7 {
 
             try {
 
-                nota = Integer.parseInt(sc.nextLine());
-
-                    if (nota > 10 || nota < 0) {
-
-                        System.out.println("Eso NO es una notilla válida lilvro...");
-
-                    } else {
-
-                        nota = sc.nextDouble();
-                        sc.nextLine();
-                        correcto = true;
-
-                    }
+                nota = Double.parseDouble(sc.nextLine());
+                correcto = true;
 
             } catch (NumberFormatException e) {
 
                 System.out.println("Eso NO es una notilla válida lilvro...");
+
+            }
+
+            if (nota > 10 || nota < 0) {
+
+                System.out.println("Eso NO es una notilla válida lilvro...");
+                correcto = false;
 
             }
 
