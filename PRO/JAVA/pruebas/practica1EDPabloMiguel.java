@@ -9,13 +9,19 @@ public class practica1EDPabloMiguel {
         int iter = random.nextInt(5) + 1; // nextInt(20) genera un número entre 0 y 4
         int count = random.nextInt(10) + 1; // nextInt(20) genera un número entre 0 y 9
         System.out.println("Iteraciones: " + iter + " Números: " + count + ".Cantidad de números a generar: " + iter * count);
-        for (int i = 0; i < iter; i++)
-        {
+
+        for (int i = 0; i < iter; i++) {
+
             System.out.println("Iteración número: " + i);
+
             int j = 0;
+
             while (j < count) {
+
                 System.out.println("-> Iter. " + j + ", valor de i: " + i);
+
                 j++;
+
             }
         }
     }
