@@ -20,6 +20,11 @@ public class ej8 {
 
             System.out.println("Quieres operar con reales (1) o enteros (2)");
             System.out.print("> ");
+            while (!sc.hasNextInt()) {
+                System.out.println("Valor Inválido!");
+                System.out.print("> ");
+                sc.nextLine();
+            }
             opc = sc.nextInt();
             sc.nextLine();
 
