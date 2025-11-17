@@ -1,0 +1,44 @@
+package TEMA4.Ejercicios1;
+import java.util.Scanner;
+
+public class ej10 {
+
+    public static int factorial(int num) {
+
+        int total = 1;
+
+        for (int i = 1; i <= num ; i++) {
+
+            total *= i;
+
+        }
+
+        return total;
+
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        boolean correcto = false;
+
+        do {
+
+            System.out.println("Dime un numerín pal factorial");
+            System.out.print("> ");
+
+            try {
+
+                int num = Integer.parseInt(sc.nextLine());
+                System.out.println("El factorial de " + num + " es: " + factorial(num));
+                correcto = true;
+
+            } catch (NumberFormatException e) {
+
+                System.out.println("nuh uh");
+
+            }
+
+        } while (!correcto);
+
+    }
+}
