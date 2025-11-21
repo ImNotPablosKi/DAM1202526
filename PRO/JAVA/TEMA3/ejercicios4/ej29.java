@@ -33,14 +33,22 @@ public class ej29 {
         System.out.println("Altura: " + alto + ", Anchura: " + ancho);
 
         for (int i = 0; i <= alto ; i++) {
+
             for (int j = 0; j <= ancho; j++) {
+
                 if (i == 0 || i == alto || j == 0 || j == ancho ) {
+
                     System.out.print("*");
+
                 } else {
+
                     System.out.print(" ");
+
                 }
             }
+
             System.out.println(" ");
+
         }
     }
 }
