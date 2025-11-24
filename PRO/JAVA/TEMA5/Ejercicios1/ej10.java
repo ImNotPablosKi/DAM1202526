@@ -1,11 +1,9 @@
 package TEMA5.Ejercicios1;
 
-import java.util.ArrayList;
-
 public class ej10 {
     public static void main(String[] args) {
         int[] rando = new int[10];
-        ArrayList<Integer> aux = new ArrayList<>();
+        int contador;
 
         for (int i = 0; i < rando.length ; i++) {
 
@@ -14,26 +12,26 @@ public class ej10 {
 
         }
 
-        for (int i = 0; i < rando.length - 1; i++) {
+        System.out.println(" ");
 
-            if (rando[i] != rando[i+1]) {
+        for (int i = -10; i <= 10; i++) {
 
-                if (!aux.contains(rando[i])) {
+            contador = 0;
+            for (int j = 0; j < rando.length-1; j++) {
 
-                    aux.add(rando[i]);
+                if (i == rando[j]) {
+
+                    contador++;
 
                 }
 
             }
 
-        }
+            if (contador == 1) {
 
-        System.out.println();
-        System.out.println("NO se repiten los siguientes numeros:");
+                System.out.println("El número " + i + "NO SE REPITE");
 
-        for (int j : aux) {
-
-            System.out.print(j + " ");
+            }
 
         }
 
