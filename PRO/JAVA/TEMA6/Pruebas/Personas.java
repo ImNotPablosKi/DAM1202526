@@ -13,9 +13,15 @@ public class Personas {
 
     }
 
-    public Personas(String nombre, Double peso, Double altura, Integer edad, String dni) {
+    public Personas(String nombre) {
 
         this.nombre = nombre;
+
+    }
+
+    public Personas(String nombre, Double peso, Double altura, Integer edad, String dni) {
+
+        this(nombre);
         this.peso = peso;
         this.altura = altura;
         this.edad = edad;
@@ -72,6 +78,13 @@ public class Personas {
                 ", edad=" + edad +
                 ", dni='" + dni + '\'' +
                 '}';
+    }
+
+    public String info() {
+
+        return "nombre='" + nombre + ", dni='" + dni;
+
+
     }
 
 }
