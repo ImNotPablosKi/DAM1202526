@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GRID</title>
+
+    <style>
+
+        h1 {
+
+            font-family: Cascadia Code;
+            font-weight: lighter;
+            text-align: center;
+
+        }
+
+        .container {
+
+            background-color: rgb(197, 197, 197);
+            border: 2px solid black;
+            border-radius: 7px;
+            padding: 7px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 100px;
+            grid-auto-rows: 100px;
+            gap: 7px 7px;
+
+        }
+
+        .container div {
+
+            border: 1px solid black;
+            border-radius: 5px;
+            padding: 5px;
+
+        }
+
+        .container div:first-child {
+
+            background-color: coral;
+            grid-column: 2/4;
+
+        }
+
+        .container div:nth-child(2) {
+
+            background-color: aquamarine;
+            grid-row: 1/3;
+
+        }
+
+        .caja3 {
+
+            grid-column: 2/4;
+            background-color: bisque;
+
+        }
+
+        .caja4 {
+
+            grid-column: 1/3;
+            background-color: aqua;
+
+        }
+
+        .caja5 {
+
+            grid-column: 3/3;
+            grid-row: 3/6;
+            background-color: brown;
+
+        }
+
+        .caja6  {
+
+            grid-column: 1/2;
+            grid-row: 4/6;
+            background-color: chartreuse;
+
+        }
+
+        .caja7  {
+
+            grid-column: 2/3;
+            grid-row: 4/6;
+            background-color: yellowgreen;
+
+        }
+
+        .caja8 {
+
+            grid-column: 1/4;
+            grid-row: 6/7;
+            background-color: violet;
+
+        }
+
+        .caja9 {
+
+            grid-column: 1/3;
+            background-color: chocolate;
+
+        }
+
+        .caja10 {
+
+            grid-column: 1/3;
+            grid-row: 8/8;
+            background-color: cadetblue;
+
+        }
+
+        .caja11 {
+
+            grid-column: 3/4;
+            grid-row: 7/9;
+            background-color: teal;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1>Clase de GRID Layout en CSS</h1>
+    <section class="container">
+        <div>1</div>
+        <div>2</div>
+        <div class="caja3">3</div>
+        <div class="caja4">4</div>
+        <div class="caja5">5</div>
+        <div class="caja6">6</div>
+        <div class="caja7">7</div>
+        <div class="caja8">8</div>
+        <div class="caja9">9</div>
+        <div class="caja10">10</div>
+        <div class="caja11">11</div>
+    </section>
+</body>
+</html>
