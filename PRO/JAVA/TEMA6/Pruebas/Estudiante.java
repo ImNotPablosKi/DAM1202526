@@ -54,6 +54,8 @@ public class Estudiante extends Personas{
 
     @Override
     public String info() {
+
         return super.info() + ", numExpediente: " + numExpediente;
+
     }
 }
