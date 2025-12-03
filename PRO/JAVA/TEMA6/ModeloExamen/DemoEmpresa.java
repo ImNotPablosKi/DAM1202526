@@ -1,5 +1,9 @@
 package TEMA6.ModeloExamen;
 
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
+
 public class DemoEmpresa {
 
     public static void main(String[] args) {
