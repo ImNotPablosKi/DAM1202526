@@ -13,7 +13,7 @@ public class DemoEmpresa {
         Empleados e1 = new Empleados("Pablo", "Gorras", LocalDate.parse("2025-08-25"), "12432434H", 1200.0, "PC1");
         Empleados e2 = new Empleados("Hecprooll", "Criado", LocalDate.parse("2025-09-30"), "76859478J", 1267.0, "PC2");
         Empleados e3 = new Empleados("Pascual", "Pérez", LocalDate.parse("2023-09-08"), "66666666K", 9999.0, "el jefe");
-        Empleados e4 = new Empleados("Andres", "Pescaru?", LocalDate.parse("2025-12-07"), "12432434H", 1500.0, "PC3");
+        Empleados e4 = new Empleados("Andres", "Pescaru?", LocalDate.parse("2025-12-07"), "17680434H", 1500.0, "PC3");
         Empleados e5 = new Empleados("Alonso", "SorianoGPT", LocalDate.parse("2025-10-11"), "77463534R", 2000.0, "PC4");
 
         ArrayList<Empleados> empleados = new ArrayList<>();
@@ -49,7 +49,7 @@ public class DemoEmpresa {
 
                         String puesto = sc.next();
 
-                        misEmpleados.buscarEmpleado(puesto);
+                        System.out.println(misEmpleados.buscarEmpleado(puesto));
 
                         bien = true;
 

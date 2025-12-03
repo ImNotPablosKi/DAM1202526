@@ -1,6 +1,7 @@
 package TEMA6.ModeloExamen;
 
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Empresa {
@@ -13,6 +14,13 @@ public class Empresa {
 
     }
 
+    //uh, pero vale uh
+    public Empresa() {
+
+        empleados = new ArrayList<>();
+
+    }
+
     public Empresa(ArrayList<Empleados> empleados) {
 
         this.empleados = empleados;
@@ -21,9 +29,17 @@ public class Empresa {
 
     public void mostrarEmpleados() {
 
-        for (Empleados empleado: empleados) {
+        if (empleados.isEmpty()) {
 
-            System.out.print(empleado.getNombre() + ", ");
+            System.out.println("No hay empleados a mostrar.");
+
+        } else {
+
+            for (Empleados empleado: empleados) {
+
+                System.out.print(empleado.getNombre() + ", ");
+
+            }
 
         }
 
@@ -33,35 +49,47 @@ public class Empresa {
 
         Double total = 0.0;
 
-        for (Empleados empleado : empleados) {
+        if (empleados.isEmpty()) {
 
-            total += empleado.getSalario();
+            System.out.println("No hay empleados a mostrar.");
+            return 0.0;
+
+        } else {
+
+            for (Empleados empleado : empleados) {
+
+                total += empleado.getSalario();
+
+            }
+
+            return total/empleados.size();
 
         }
 
-        return total;
-
     }
 
-    public void mayorAntiguedad() {
+    public Empleados mayorAntiguedad() {
 
-        Integer masAntiguo = 0;
+        if (empleados.isEmpty()) return null;
+
+        Empleados masAntiguo = empleados.get(0); // Cojo primer elemento del ArrayList
 
         for (Empleados empleado : empleados) {
 
-            if (empleado.antiguedad() > masAntiguo) {
+            if (empleado.antiguedad() > masAntiguo.antiguedad()) {
 
-                masAntiguo = empleado.antiguedad();
+                masAntiguo = empleado;
 
             }
 
         }
 
-        System.out.println("El más antiguo tiene una antiguedad de: " + masAntiguo.toString() + " años.");;
+       return masAntiguo;
 
     }
 
-    public void buscarEmpleado(String target ) {
+    // Tengo retraso
+    public void buscarEmpleadoPeroMal(String target ) {
 
         boolean found = false;
 
@@ -88,6 +116,25 @@ public class Empresa {
             System.out.println("No se ha encontrado al objetivo especificado.");
 
         }
+
+    }
+
+    // Esto está mejor, se me debería haber ocurrido pero uh
+    public ArrayList<Empleados> buscarEmpleado(String target) {
+
+        ArrayList<Empleados> found = new ArrayList<>();
+
+        for (Empleados empleado : empleados) {
+
+            if (empleado.getNombre().equalsIgnoreCase(target) || empleado.getPuesto().equalsIgnoreCase(target)) {
+
+                found.add(empleado);
+
+            }
+
+        }
+
+        return found;
 
     }
 
