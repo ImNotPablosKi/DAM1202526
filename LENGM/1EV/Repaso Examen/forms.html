@@ -7,14 +7,29 @@
 
     <style>
 
-        nav {
+        h2 {
+
+            text-align: center;
+            position: relative;
+            bottom: 20px;
+            font-family: Cascadia Code;
+            font-weight: lighter;
+
+        }
+
+        .container2 {
 
             border: 2px solid black;
             border-radius: 5px;
+            padding: 10PX;
+
+        }
+
+        nav {
+
             display: flex;
             justify-content: center;
-            justify-content: space-evenly;
-            padding: 10PX;
+            justify-content: space-around;
 
         }
 
@@ -35,16 +50,19 @@
 
 </head>
 <body>
-    
-    <div class="container">
+    <div class="container2">
+
+         <h2>FORMULARIOS</h2>
 
         <nav>
-
         <a href="">COSA</a>
         <a href="">COSA</a>
         <a href="">COSA</a>
 
-    </nav>
+        </nav>
+
+    </div>
+    <div class="container">
 
     <hr style="margin: 30px;">
 
@@ -129,8 +147,8 @@
 
         <br>
 
-        <input type="checkbox" name="comprobar" id="politicas"><label for="politicas"> He leído y reconozco las Políticas de Privacidad</label><br>
-        <input type="checkbox" name="comprobar" id="publicidad"><label for="publicidad"> Deseo recibir noticias sobre nuestros próximo Productos</label><br>
+        <input type="checkbox" name="comprobar" id="politicas" required><label for="politicas"> He leído y reconozco las Políticas de Privacidad</label><br>
+        <input type="checkbox" name="comprobar" id="publicidad"><label for="publicidad"> Deseo recibir noticias sobre nuestros próximos Productos</label><br>
 
         <br>
 

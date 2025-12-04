@@ -17,20 +17,23 @@
             border-radius: 5px;
             background-color: blanchedalmond;
             flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            flex-wrap: nowrap;
+            align-items: flex-end;
             transition: all 0.2s;
 
         }
 
         .container > div {
 
+            text-align: center;
             background-color: white;
             border: 2px solid black;
             border-radius: 5px;
             padding: 7px;
             margin: 2px;
             transition: all 0.2s;
+            width: 50px;
+            height: 50px;
 
         }
 
@@ -62,6 +65,26 @@
 
             position: fixed;
             top: 900px;
+
+        }
+
+        .container div:first-child {
+
+            position: relative;
+            right: 30px;
+        }
+
+        .container div:nth-child(2) {
+
+            position: relative;
+            left: 30px;
+
+        }
+
+        .container div:nth-child(5) {
+
+            position: sticky;
+            top: 70px;
 
         }
 
