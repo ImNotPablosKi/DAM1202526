@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tablas</title>
+
+    <style>
+
+        h1 {
+
+            text-align: center;
+            font-family: Cascadia Code;
+            font-weight: lighter;
+
+        }
+
+        table, th, td {
+
+            border: 2px solid black;
+            border-collapse: collapse;
+            padding: 5px;
+
+        }
+
+        .container {
+
+            display: flex;
+            justify-content: center;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <h1><i>Tablas</i> en <s>HTML</s> - <b>Repaso</b> <u>Exámen</u> 1ª EV</h1>
+
+    <hr style="width: 80%;">
+
+    <br>
+
+    <div class="container">
+
+        <table>
+
+        <thead>
+
+            <tr>
+
+                <th>Una</th>
+                <th>Tabla</th>
+                <th>Muy</th>
+                <th>Guapa</th>
+                <th>HTML</th>
+
+            </tr>
+
+        </thead>
+
+        <tbody>
+
+            <tr>
+                <td rowspan="2">Emil</td>
+                <td>Tobias</td>
+                <td colspan="2">Wilson</td>
+                <td rowspan="2">Cock</td>
+            </tr>
+            <tr>
+
+                <td colspan="2">Must</td>
+                <td>Conquer</td>
+
+            </tr>
+            <tr>
+
+                <td colspan="5" style="text-align: center;">Elden</td>
+    
+            </tr>
+            <tr>
+                <td>Lirili</td>
+                <td>Larilá</td>
+                <td>Porcodio</td>
+                <td rowspan="2">jeje</td>
+                <td rowspan="2">Porco Alá</td>
+            </tr>
+            <tr>
+                <td colspan="2">Six</td>
+                <td>Seven</td>
+
+            </tr>
+
+        </tbody>
+
+    </table>
+
+    </div>
+
+    <div class="container">
+
+        <ol>
+
+            <li>Cosa 1</li>
+            <li>Cosa2</li>
+            <li>Cosa 3</li>
+            <li>Cosa 4
+                <ul>
+                    <li>Putillas</li>
+                    <li>Zorrillas</li>
+                    <li>Pascual</li>
+                </ul>
+            </li>
+
+        </ol>
+
+    </div>
+
+
+    <ol style="list-style: armenian;">
+
+            <li>Cosa</li>
+            <li>Quiqiri</li>
+            <li>Cosica</li>
+
+    </ol>
+
+    <ol style="list-style: circle;">
+
+            <li>Cosa</li>
+            <li>Quiqiri</li>
+            <li>Cosica</li>
+
+    </ol>
+
+    <ol style="list-style: upper-roman;">
+
+            <li>Cosa</li>
+            <li>Quiqiri</li>
+            <li>Cosica</li>
+
+    </ol>
+    
+    <ol type="A" start="6">
+
+            <li>type="A" start="6"</li>
+            <li>Cosa</li>
+            <li>Quiqiri</li>
+            <li>Cosica</li>
+    </ol>
+
+    <ol start="40" reversed>
+
+        <li>start="40" reversed</li>
+        <li>Opc1</li>
+        <li>Opc2</li>
+        <li>Opc3</li>
+
+    </ol>
+
+</body>
+</html>

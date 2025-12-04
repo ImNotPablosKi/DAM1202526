@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formularios</title>
+
+    <style>
+
+        nav {
+
+            border: 2px solid black;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            justify-content: space-evenly;
+            padding: 10PX;
+
+        }
+
+        nav a {
+
+            text-decoration: none;
+            color: black;
+
+        }
+
+        .container {
+
+            padding: auto, 50px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <nav>
+
+        <a href="">COSA</a>
+        <a href="">COSA</a>
+        <a href="">COSA</a>
+
+    </nav>
+
+    <hr style="margin: 30px;">
+
+    <form action="get">
+
+        <fieldset>
+
+            <legend>"Datos Personales"</legend>
+
+            <label for="name">Nombre: </label>
+            <input type="text" name="nombre" id="name" placeholder="Nombre..."><br>
+            <br>
+
+            <label for="surname">Apellidos: </label>
+            <input type="text" name="Apellidos" id="surname" placeholder="Apellidos..."><br><br>
+
+            <label for="email">Correo: </label>
+            <input type="email" name="correo" id="email" placeholder="example@domain.com"><br><br>
+
+            <label for="dni">DNI: </label>
+            <input type="text" name="dni" id="dni" placeholder="12345678A"><br><br>
+
+            <label for="phone">Teléfono: </label>
+            <input type="text" name="tfno" id="phone" placeholder="XXX XX XX XX"><br><br>
+
+            <label for="fecha">Fecha de Nacimiento: </label><input type="date" name="fecha" id="fecha">
+
+        </fieldset>
+
+        <br>
+
+        <fieldset>
+
+            <legend>"Mayor Información"</legend>
+
+            <label for="cursos">Curso actual: </label><br>
+            <select name="cursos" id="cursos" aria-label="">
+                <option value="" disabled selected hidden>-- Seleccione una Opcion --</option>
+                <optgroup label="SMR">
+                    <option value="smr1">SMR1</option>
+                    <option value="smr2">SMR2</option>
+                </optgroup>
+                <optgroup label="DAM">
+                    <option value="dam1">DAM1</option>
+                    <option value="dam2">DAM2</option>
+                </optgroup>
+            </select>
+
+            <br><br>
+
+            <label for="turno">Turno: </label><br>
+            <select name="turnos" id="turno">
+                <option value="" disabled selected hidden>-- Seleccione un Turno --</option>
+                <option value="mat">Matutino</option>
+                <option value="ves">Vespertino</option>
+            </select>
+
+            <br><br>
+
+            <label for="piel">Oscuridad de su piel...</label><br>
+            <input type="range" name="colordepiel" id="piel">
+
+            <br>
+
+            <p>Lenguajes de Programacion que conoces...</p>
+            <input type="checkbox" name="java" id="java"><label for="java"> Java (booof)</label><br>
+            <input type="checkbox" name="python" id="python"><label for="python"> Python</label><br>
+            <input type="checkbox" name="c" id="c"><label for="c"> C / C# / C++</label><br>
+            <input type="checkbox" name="kotlin" id="kotlin"><label for="kotlin"> Kotlin</label>
+
+            <p>Nivel en dicho(s) lenguaje(s):</p>
+
+            <input type="radio" name="Nivel" id="bajo"><label for="bajo"> Bajo</label><br>
+            <input type="radio" name="Nivel" id="medio"><label for="medio"> Medio</label><br>
+            <input type="radio" name="Nivel" id="alto"><label for="alto"> Alto</label><br>
+
+            <br>
+
+            <label for="foto">Foto ID: </label><input type="file" name="foto" id="foto" required>
+
+        </fieldset>
+
+        <br>
+
+        <input type="checkbox" name="comprobar" id="politicas"><label for="politicas"> He leído y reconozco las Políticas de Privacidad</label><br>
+        <input type="checkbox" name="comprobar" id="publicidad"><label for="publicidad"> Deseo recibir noticias sobre nuestros próximo Productos</label><br>
+
+        <br>
+
+        <button type="submit">Enviar Datos</button> <button type="reset">Limpiar</button>
+
+    </form>
+
+    </div>
+
+    
+
+</body>
+</html>
