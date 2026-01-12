@@ -1,9 +1,6 @@
 package UD12.Ejercicios3;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -14,42 +11,39 @@ import java.util.regex.Pattern;
 public class ej8 {
     public static void main(String[] args) {
 
-        File archivo = new File("cosa/EJ5/ej5.txt");
         Pattern patron = Pattern.compile("\\b\\S+\\b"); // Usamos el "\\S" para indicar TODO lo que NO sea un salto de linea
 
         int count = 0;
 
-        if ( !archivo.exists()) {
+        try (BufferedReader br = new BufferedReader(new FileReader("cosa/EJ5/ej5.txt"))) {
 
-            System.out.println("nuh uh (no existe)");
+            String line;
 
-        } else {
+            while ((line = br.readLine()) != null) {
 
-            try (BufferedReader br = new BufferedReader(new FileReader(archivo))) {
+                Matcher matcher = patron.matcher(line);
 
-                String line;
+                while (matcher.find()) {
 
-                while ((line = br.readLine()) != null) {
-
-                    Matcher matcher = patron.matcher(line);
-
-                    while (matcher.find()) {
-
-                        count++;
-
-                    }
-
-                    System.out.println(count);
+                    count++;
 
                 }
 
-            } catch (Exception e) {
-
-                System.out.println("nuh uh");
+                System.out.println(count);
 
             }
+
+        } catch (FileNotFoundException e) {
+
+            System.out.println("nuh uh");
+
+        } catch (IOException e) {
+
+            System.out.println("nuh uh");
 
         }
 
     }
+
 }
+
