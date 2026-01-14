@@ -16,7 +16,7 @@ public class ej14 {
 
         while (mayus.find()) {
 
-            System.out.println(mayus.group());
+            System.out.print(mayus.group() + " ");
 
         }
 
