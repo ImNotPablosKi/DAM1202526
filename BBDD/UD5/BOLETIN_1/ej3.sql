@@ -44,7 +44,7 @@ CREATE TABLE libros (
 	disponible CHAR(1) DEFAULT 'S',
 	cif_editorial VARCHAR(12),
 	CONSTRAINT pk_isbn PRIMARY KEY (isbn),
-	CONSTRAINT ck_anio_publicacion CHECK(anio_publicacion<=1000 AND anio_publicacion<2026+1),
+	CONSTRAINT ck_anio_publicacion CHECK(anio_publicacion>=1000 AND anio_publicacion<2026+1),
 	CONSTRAINT ck_num_paginas CHECK(num_paginas>0),
 	CONSTRAINT ck_idiomas CHECK(idioma IN('ESPAÑOL','INGLES','FRANCES','ALEMAN','ITALIANO','PORTUGUES')),
 	CONSTRAINT ck_formato CHECK(formato IN('DIGITAL','FISICO','AMBOS')),
@@ -78,3 +78,27 @@ CREATE TABLE socios (
 	CONSTRAINT ck_tipo_socio_socios CHECK (tipo_socio IN ('BASICO','PREMIUM','VIP')),
 	CONSTRAINT pk_num_socio PRIMARY KEY (num_socio)
 );
+
+CREATE TABLE prestamos (
+	id_prestamo INT AUTO_INCREMENT,
+	num_socio INT,
+	isbn VARCHAR(17),
+	fecha_prestamo DATETIME DEFAULT NOW() NOT NULL,
+	fecha_devolucion_prevista DATE NOT NULL,
+	fecha_devolucion_real DATE NOT NULL,
+	estado VARCHAR(20) DEFAULT 'EN_PRESTAMO',
+	renovaciones INTEGER DEFAULT 0,
+	CONSTRAINT pk_prestamos_id PRIMARY KEY (id_prestamo),
+	CONSTRAINT fk_socio_prestamo FOREIGN KEY (num_socio) REFERENCES socios (num_socio),
+	CONSTRAINT fk_isbn_prestamo FOREIGN KEY (isbn) REFERENCES libros (isbn),
+	CONSTRAINT ck_estado CHECK(estado IN('EN_PRESTAMO','DEVUELTO','RESTRASADO','PERDIDO')),
+	CONSTRAINT ck_renovaciones CHECK(renovaciones>=0 AND renovaciones<=3),
+	CONSTRAINT ck_fecha_devolucion CHECK(fecha_devolucion_prevista>fecha_prestamo)
+);
+
+INSERT INTO editoriales (cif, nombre, pais_origen, anio_fundacion) VALUES ('A12345678','Editorial Planeta','ESPAÑA',1949);
+
+INSERT INTO autores (nombre_completo, nacionalidad, fecha_nacimiento, fecha_fallecimiento) VALUES ('Gabriel García Márquez', 'Colombia', '1927-03-06', '2014,04,17');
+
+-- Genera una inconsistencia en el año de publicación si ponemos (por ejemplo) 2030, pues es posterior a la fecha actual.
+INSERT INTO libros (isbn, titulo, anio_publicacion, num_paginas, idioma, genero, cif_editorial) VALUES ('978-84-08-1234-6','Cien Años de Soledad',1967,500,'ESPAÑOL','Realismo Mágico','A12345678');
