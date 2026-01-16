@@ -52,4 +52,9 @@ public class EmpleadoCualificado extends Empleado {
         return "Yo, " + getNombre() + ", Soy empleado del mes? -> " + esEmpleadoDelMes;
 
     }
+
+    @Override
+    public String mePaganBien() {
+        return "SOY FUNCIONARIO JODER CLARO QUE ME PAGAN BIEN";
+    }
 }
