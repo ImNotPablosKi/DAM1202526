@@ -101,4 +101,26 @@ INSERT INTO editoriales (cif, nombre, pais_origen, anio_fundacion) VALUES ('A123
 INSERT INTO autores (nombre_completo, nacionalidad, fecha_nacimiento, fecha_fallecimiento) VALUES ('Gabriel García Márquez', 'Colombia', '1927-03-06', '2014,04,17');
 
 -- Genera una inconsistencia en el año de publicación si ponemos (por ejemplo) 2030, pues es posterior a la fecha actual.
-INSERT INTO libros (isbn, titulo, anio_publicacion, num_paginas, idioma, genero, cif_editorial) VALUES ('978-84-08-1234-6','Cien Años de Soledad',1967,500,'ESPAÑOL','Realismo Mágico','A12345678');
+INSERT INTO libros (isbn, titulo, anio_publicacion, num_paginas, idioma, genero, cif_editorial) VALUES ('978-84-08-1234-6','Cien Años de Soledad',1967,500,'ESPAÑOL','NOVELA','A12345678');
+
+
+-- Alteraciones
+ALTER TABLE libros ADD sinopsis LONGTEXT;
+
+ALTER TABLE libros ADD CONSTRAINT ck_genero CHECK(genero IN('NOVELA','ENSAYO','POESIA','TEATRO','CIENCIA','HISTORIA','BIOGRAFIA','INFANTIL'));
+
+ALTER TABLE libros ADD valoracion_media DECIMAL(4,2), ADD CONSTRAINT ck_valoracion CHECK(valoracion_media>=0 AND valoracion_media<=5);
+
+ALTER TABLE socios DROP CONSTRAINT ck_penalizaciones_socios, ADD CONSTRAINT ck_penalizaciones CHECK(penalizaciones>=0 AND penalizaciones<=20);
+
+ALTER TABLE prestamos ADD observaciones VARCHAR(300);
+
+ALTER TABLE socios DROP CONSTRAINT ck_tipo_socio_socios, ADD CONSTRAINT ck_tipo_socio CHECK(tipo_socio IN('BASICO','PREMIUM','VIP','CORPORATIVO'));
+
+ALTER TABLE editoriales DROP web;
+
+ALTER TABLE prestamos ADD CONSTRAINT ck_prestamos_socios UNIQUE (id_prestamo, num_socio, isbn);
+
+ALTER TABLE socios ADD descuento_socio INTEGER, ADD CONSTRAINT ck_descuento CHECK(descuento_socio>=0 AND descuento_socio<=50);
+
+ALTER TABLE socios ADD CONSTRAINT ck_vip_status CHECK((tipo_socio<>'VIP') OR (tipo_socio='VIP' AND cuota_pagada='S'));
