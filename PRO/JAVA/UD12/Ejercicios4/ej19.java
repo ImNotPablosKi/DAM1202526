@@ -9,7 +9,19 @@ public class ej19 {
 
         Scanner sc = new Scanner(System.in);
 
-//        Matcher passwd = Pattern.compile("\\b[([A-Z]{1,})&(\\d{1,}]\\b");
+        System.out.println("Dime una contraseña: ");
+
+        Matcher passwd = Pattern.compile("^(?=.*[A-Z])(?=.*\\d)(?=.*[@#$%])\\S{8,}$").matcher(sc.nextLine());
+
+        if (passwd.find()) {
+
+            System.out.println("Contraseña Válida!");
+
+        } else {
+
+            System.out.println("nuh uh");
+
+        }
 
     }
 }
