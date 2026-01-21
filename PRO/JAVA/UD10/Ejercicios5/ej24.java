@@ -17,7 +17,7 @@ public class ej24 {
                 StringBuilder regex = new StringBuilder();
                 StringBuilder regex2 = new StringBuilder();
 
-                Matcher matcherPalabras = Pattern.compile("\\b\\w+\\b").matcher(linea);
+                Matcher matcherPalabras = Pattern.compile("\\S*[\\S]+\\S*").matcher(linea);
 
                 int contadorPalabras = 0;
 
@@ -32,11 +32,11 @@ public class ej24 {
 
                     if (i == contadorPalabras-1) {
 
-                        regex.append("(\\S*\\w+\\S*)");
+                        regex.append("(\\S*[\\w]+\\S*)");
 
                     } else {
 
-                        regex.append("(\\S*\\w+\\S*) ");
+                        regex.append("(\\S*[\\w]+\\S*) ");
 
                     }
 
@@ -53,8 +53,6 @@ public class ej24 {
                         regex2.append("$" + i + " ");
 
                     }
-
-
 
                 }
 
@@ -81,6 +79,7 @@ public class ej24 {
             System.out.println(e);
 
         }
+
 
 
     }
