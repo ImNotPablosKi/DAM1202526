@@ -9,8 +9,8 @@ public class validarPasswd {
         String texto = "Hola esto es un texto convencional, mi password es: 12345678Nigger<>auswitchz para el correo niggers@kkk.me";
 
         Matcher passwd = Pattern.compile("(?=\\S*[A-Z])(?=\\S*[^a-zA-Z0-9\\s])(?=\\S*\\d)\\S{8,}").matcher(texto);
-        Matcher email = Pattern.compile("\\b(?=.*[a-zA-Z]]{3,})@(?=.*[a-z]{3,})\\.[a-z]{2,3}]\\b").matcher(texto);
-        Matcher contiene = Pattern.compile("(?=.*a)").matcher(texto);
+        Matcher email = Pattern.compile("[a-zA-Z0-9]{5,}@[a-z]{3,}\\.[a-z]{2,3}").matcher(texto);
+        Matcher contiene = Pattern.compile("\\b(?=\\w*a)\\w+\\b").matcher(texto);
 
         while (passwd.find()) {
 
