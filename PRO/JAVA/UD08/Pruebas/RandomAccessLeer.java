@@ -17,7 +17,7 @@ public class RandomAccessLeer {
 
             String line;
 
-            // Esto hay que ponerlo
+            // Esto hay que ponerlo por huevos
 
             raf.seek(0);
 
