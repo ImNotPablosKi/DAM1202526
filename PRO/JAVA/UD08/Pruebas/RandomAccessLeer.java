@@ -17,6 +17,8 @@ public class RandomAccessLeer {
 
             String line;
 
+            // Esto hay que ponerlo
+
             raf.seek(0);
 
 //            while ((line = raf.readLine()) != null) {
