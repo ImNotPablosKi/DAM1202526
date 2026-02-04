@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="21e976ff-0d82-472f-b571-7056c48aaef8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/PracticaRepasoUD08/Clases/Camion.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PracticaRepasoUD08/Clases/Coche.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PracticaRepasoUD08/Clases/Concesionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PracticaRepasoUD08/Clases/Motocicleta.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PracticaRepasoUD08/Clases/Vehiculo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/PracticaRepasoUD08/Demo/DemoConcesionario.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Pruebas/Lambda.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
+  <component name="ProjectId" id="38o4IdsYJK1btJvHOAlc4DZ1FQs" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.DemoConcesionario.executor": "Run",
+    "Application.DemoEj1.executor": "Run",
+    "Application.DemoEj2.executor": "Run",
+    "Application.DemoEj3.executor": "Run",
+    "Application.DemoEj4.executor": "Run",
+    "Application.DemoEj5.executor": "Run",
+    "Application.Lambda.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "master"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="21e976ff-0d82-472f-b571-7056c48aaef8" name="Changes" comment="" />
+      <created>1769452513508</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1769452513508</updated>
+    </task>
+    <servers />
+  </component>
+</project>
