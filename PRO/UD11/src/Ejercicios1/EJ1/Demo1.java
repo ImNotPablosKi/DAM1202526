@@ -76,7 +76,6 @@ public class Demo1 {
 
         System.out.println("REGISTROS DE NOMBRES QUE COMIENZAN POR 'A' [ORDER BY NOMBRE]");
         System.out.println("---------------------------------------------");
-        registry.stream().filter(registro -> registro.getFirstName().startsWith("A")).sorted(Comparator.comparing(Registro::getLast_login).reversed()).forEach(System.out::println);
-
+        registry.stream().sorted(Comparator.comparing(Registro::getLast_login).reversed()).filter(registro -> registro.getFirstName().startsWith("A")).map(registro -> registro.getFirstName() + " " + registro.getLastName()) .forEach(System.out::println);
     }
 }
