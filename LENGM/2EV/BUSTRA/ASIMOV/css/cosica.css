@@ -1,0 +1,65 @@
+/* -- CSS Propio para la web -- */
+
+#cutter1 {
+
+    background: linear-gradient(to right, rgb(7, 130, 191), rgb(181, 211, 245));
+
+}
+
+#cutter2 {
+
+    background: linear-gradient(to right, rgb(7, 130, 191), rgb(181, 211, 245));
+
+}
+
+li>a.hov:hover {
+
+    color: rgb(0, 0, 0) !important
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+
+    font-family: 'Montserrat', sans-serif;
+
+}
+
+h1,
+h5 {
+
+    color: rgb(5, 96, 142);
+    font-family: "Roboto Slab", serif !important;
+
+}
+
+td,
+th {
+
+    border: 1px solid rgba(51, 170, 230, 0.542) !important;
+
+}
+
+.table1 {
+
+    background-color: rgb(193, 216, 243) !important;
+
+}
+
+.table2 {
+
+    background-color: rgb(159, 197, 242) !important;
+
+}
+
+.owntext67 {
+
+    color: rgb(4, 97, 143) !important;
+
+}
+
+#borde67 {
+
+    border: 2px solid rgb(3, 96, 142);
+
+}
