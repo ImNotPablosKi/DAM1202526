@@ -60,21 +60,21 @@ public class Demo1 {
 //
 //        }
 
-        System.out.println("REGISTROS DE FRANCIA");
+        System.out.println("REGISTROS DE FRANCIA (.equalsIgnoreCase)");
         System.out.println("---------------------------------------------");
         registry.stream().filter(registro -> registro.getCountry().equalsIgnoreCase("FR")).forEach(System.out::println);
 
-        System.out.println("REGISTROS DE YAHOO (ORDER BY NOMBRE)");
+        System.out.println("REGISTROS DE YAHOO (.contains)");
         System.out.println("---------------------------------------------");
         registry.stream().filter(registro -> registro.getEmail().contains("@yahoo")).sorted(Comparator.comparing(Registro::getFirstName)).forEach(System.out::println);
 
-        System.out.println("LOGINs ENTRE NOV-2015 & JAN-2017");
+        System.out.println("LOGINs ENTRE NOV-2015 & JAN-2017 (.isAfter // .isBefore)");
         System.out.println("---------------------------------------------");
         registry.stream().filter(registro -> registro.getLast_login().isAfter(LocalDateTime.of(2015,11,1,0,0)) && registro.getLast_login().isBefore(LocalDateTime.of(2017,01,1,0,0))).forEach(System.out::println);
 
         // registry.stream().filter(registro -> ChronoPeriod.between("2015-11-01"))
 
-        System.out.println("REGISTROS DE NOMBRES QUE COMIENZAN POR 'A' [ORDER BY NOMBRE]");
+        System.out.println("REGISTROS DE NOMBRES QUE COMIENZAN POR 'A' (.startsWith)");
         System.out.println("---------------------------------------------");
         registry.stream().sorted(Comparator.comparing(Registro::getLast_login).reversed()).filter(registro -> registro.getFirstName().startsWith("A")).map(registro -> registro.getFirstName() + " " + registro.getLastName()) .forEach(System.out::println);
     }
