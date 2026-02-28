@@ -26,10 +26,10 @@ public class Demo1 {
 
                 if (!primera) {
 
-                    String campos[] = line.split(",");
-                    String fechaYhora[] = campos[9].split(" ");
-                    String fecha[] = fechaYhora[0].split("-");
-                    String hora[] = fechaYhora[1].split(":");
+                    String[] campos = line.split(",");
+                    String[] fechaYhora = campos[9].split(" ");
+                    String[] fecha = fechaYhora[0].split("-");
+                    String[] hora = fechaYhora[1].split(":");
 
                     LocalDate date = LocalDate.of(Integer.parseInt(fecha[0]), Integer.parseInt(fecha[1]), Integer.parseInt(fecha[2]));
                     LocalTime time = LocalTime.of(Integer.parseInt(hora[0]), Integer.parseInt(hora[1]), Integer.parseInt(hora[2]));
@@ -51,14 +51,6 @@ public class Demo1 {
             System.out.println("Error de E/S");
 
         }
-
-        // registry.forEach(System.out::println);
-
-//        for (Registro r: registry) {
-//
-//            System.out.println(r.getCountry());
-//
-//        }
 
         System.out.println("REGISTROS DE FRANCIA (.equalsIgnoreCase)");
         System.out.println("---------------------------------------------");
