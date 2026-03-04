@@ -1,7 +1,6 @@
-package EJ3;
+package PracticaUD10_UD11.EJ3;
 
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Demo3 {
@@ -27,27 +26,20 @@ public class Demo3 {
         LinkedHashMap<Character, Integer> letras = new LinkedHashMap<>();
 
         // Añadir Clave y valor a cada carácter, si ya lo ha almacenado le sumo 1
-        for (int i = 0; i < frase.length(); i++) {
+        for (int i = 1; i < frase.length(); i++) {
 
-            letras.put(frase.charAt(i), letras.containsKey(frase.charAt(i)) ? letras.get(frase.charAt(i)) + 1 : 1);
+            char c = frase.charAt(i);
 
-        }
+            if (letras.containsKey(c)) {
 
-        for (Map.Entry<Character, Integer> entry : letras.entrySet()) {
-
-            // Solo mostrar los que se repiten (o sea, cuyo valor es mayor a 1)
-            if (entry.getValue() > 1) {
-
-                System.out.println("Letra: " + entry.getKey().toString() + ", veces: " + entry.getValue());
-                break;
-
-            } else {
-
-                // Si no hay repeticiones, imprimir info
-                System.out.println("No hay repeticiones");
+                System.out.println("Se repite el caracter " +  c + " en posición: " + i);
                 break;
 
             }
+
+            letras.put(c, i);
+
+//            letras.put(frase.charAt(i), letras.containsKey(frase.charAt(i)) ? letras.get(frase.charAt(i)) + 1 : 1);
 
         }
 
