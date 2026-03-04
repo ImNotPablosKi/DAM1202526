@@ -9,7 +9,7 @@ import java.util.Map;
 public class Demo4 {
     public static void main(String[] args) {
 
-        try (BufferedReader br = new BufferedReader(new FileReader("src/Dump/Metadata_in_DBMS.txt"))) {
+        try (BufferedReader br = new BufferedReader(new FileReader("cosa/Dump/Metadata_in_DBMS.txt"))) {
 
             String line;
 
@@ -33,13 +33,16 @@ public class Demo4 {
 
 
             List<Map.Entry<String, Integer>> listaPalabras = new ArrayList<>(palabras.entrySet());
-            listaPalabras.sort((a, b) -> b.getValue() - a.getValue());
+            listaPalabras.sort(Map.Entry.comparingByValue());
+
+            // Sort ordena por alfabético, hacerlo reversed.
+            System.out.println(listaPalabras.reversed().stream().limit(3).toList());
 
             // Mostrar las tres palabras más frecuentes
-            System.out.println("Las tres palabras más frecuentes son:");
-            for (int i = 0; i < 3 && i < listaPalabras.size(); i++) {
-                System.out.println(listaPalabras.get(i).getKey() + ": " + listaPalabras.get(i).getValue());
-            }
+//            System.out.println("Las tres palabras más frecuentes son:");
+//            for (int i = 0; i < 3 && i < listaPalabras.size(); i++) {
+//                System.out.println(listaPalabras.get(i).getKey() + ": " + listaPalabras.get(i).getValue());
+//            }
 
         } catch (FileNotFoundException e) {
 
