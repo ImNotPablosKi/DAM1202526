@@ -1,7 +1,6 @@
 package Ejercicios1.EJ8;
 
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
 
 public class Demo8 {
     public static void main(String[] args) {
@@ -11,11 +10,11 @@ public class Demo8 {
         System.out.println("Dime algo BROVR");
         System.out.print("> ");
 
-        String frase = sc.nextLine();
+        String frase = sc.nextLine().toLowerCase();
 
         frase = frase.replaceAll(" ", "");
 
-        TreeMap<Character, Integer> letras = new TreeMap<>();
+        LinkedHashMap<Character, Integer> letras = new LinkedHashMap<>();
 
         for (int i = 0; i < frase.length() ; i++) {
 
@@ -23,6 +22,7 @@ public class Demo8 {
 
         }
 
+        System.out.println("Letras=Num. Repeticiones");
         System.out.println(letras);
 
         sc.close();
