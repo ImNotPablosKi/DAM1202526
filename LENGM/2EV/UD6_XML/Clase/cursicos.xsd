@@ -1,0 +1,67 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="resDuracion">
+        <xs:restriction base="xs:int">
+            <xs:minExclusive value="10"></xs:minExclusive>
+            <xs:maxInclusive value="100"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="resNivel">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="principiante"></xs:enumeration>
+            <xs:enumeration value="intermedio"></xs:enumeration>
+            <xs:enumeration value="avanzado"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="plataforma">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="cursos">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="curso" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="titulo" type="xs:string"></xs:element>
+                                        <xs:element name="descripcion" type="xs:string"></xs:element>
+                                        <xs:element name="duracion" type="resDuracion"></xs:element>
+                                        <xs:element name="nivel" type="resNivel"></xs:element>
+                                        <xs:element name="precio" type="xs:decimal"></xs:element>
+                                        <xs:element name="fechaInicio" type="xs:date"></xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="estudiantes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="estudiante" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"></xs:element>
+                                        <xs:element name="email" type="xs:string"></xs:element>
+                                        <xs:element name="fechaNacimiento" type="xs:date"></xs:element>
+                                        <xs:element name="cursosMatriculados">
+                                            <xs:complexType>
+                                                <xs:sequence>
+                                                    <xs:element name="cursoRef" maxOccurs="unbounded">
+                                                        <xs:complexType>
+                                                            <xs:attribute name="refCurso" type="xs:IDREF"></xs:attribute>
+                                                        </xs:complexType>
+                                                    </xs:element>
+                                                </xs:sequence>
+                                            </xs:complexType>
+                                        </xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Repaso</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+    <style>
+        #body {
+
+            background-image: url(../ASIMOV/img/fonsrobot.jpg);
+            height: 700px;
+            background-position: top center;
+            background-size: cover;
+
+        }
+
+        .cosa {
+
+            background-color: lightskyblue;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg bg-secondary-subtle">
+        <div class="container-fluid p-3">
+            <a class="navbar-brand" href="#">
+                <img src="../ASIMOV/img/logoAsimovFans.png" alt="">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Link</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Dropdown
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li>
+                </ul>
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="cosa p-1"> </div>
+
+    <div id="body">
+
+        <div class="container">
+
+            <div class="row">
+
+                <form action="" class="col-sm-12 col-md-6">
+
+                    <fieldset class="bg-primary-subtle p-5 rounded">
+                        <legend class="w-auto px-2 float-none text-strong"><b>Datos:</b></legend>
+
+                        <div class="row">
+
+                            <label for="nombre" class="col-4">Nombre: </label>
+                            <input type="text" class="form-control col" id="nombre" required>
+
+                        </div>
+
+                        <div class="row mt-3">
+
+                            <label for="apellido" class="col-4">Apellido(s): </label>
+                            <input type="text" class="form-control col" id="apellido" required>
+
+                        </div>
+
+                        <div class="row mt-3">
+
+                            <label for="email" class="col-4">Correo electrónico: </label>
+                            <input type="email" class="form-control col" id="email" required
+                                placeholder="john.doe@example.com">
+
+                        </div>
+
+                        <div class="row mt-3">
+
+                            <label for="tez" class="col-form-label col-4">Seleccione su tipo de piel: </label>
+                            <select class="form-control col mb-3" id="tez">
+                                <option value="" disabled>Seleccione una opción</option>
+                                <option value="clara" selected>Clara</option>
+                                <option value="oscura">Oscura</option>
+                                <option value="morena">Morena</option>
+                            </select>
+
+                        </div>
+
+                        <div class="row mt-3">
+
+                            <label for="comentarios" class="col-form-label col-4">Comentarios adicionales...</label>
+                            <textarea class="form-control col" id="comentarios" rows="3"></textarea>
+
+                        </div>
+
+                    </fieldset>
+
+                    <button type="submit" class="btn btn-success my-3">Enviar</button>
+                    <button type="reset" class="btn btn-warning my-3">Restablecer</button>
+
+                </form>
+
+                <div class="col-sm-12 col-md-6">
+
+                    <fieldset class="bg-primary-subtle p-5 rounded">
+                        <legend class="float-none"><b>Top 5 Chinese Proverbs:</b></legend>
+                        <div class="row">
+
+                            <div class="col-12 col-lg-4 fs-5 fw-bold">
+                                我詛咒路易斯遭遇最悲慘的命運。我只希望他痛苦不堪，對他只有恨意。即使天裂成兩半，我也不會給他任何庇護。如果路易斯有一千個恨他的人，我也會與他們為伍。如果路易斯只有一個恨他的人，那那個人就是我。如果路易斯一個恨他的人都沒有，那我就不存在了…
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                我詛咒路易斯遭遇最悲慘的命運。我只希望他痛苦不堪，對他只有恨意。即使天裂成兩半，我也不會給他任何庇護。如果路易斯有一千個恨他的人，我也會與他們為伍。如果路易斯只有一個恨他的人，那那個人就是我。如果路易斯一個恨他的人都沒有，那我就不存在了…
+                            </div>
+                            <div class="col-12 col-lg-4">
+                                我詛咒路易斯遭遇最悲慘的命運。我只希望他痛苦不堪，對他只有恨意。即使天裂成兩半，我也不會給他任何庇護。如果路易斯有一千個恨他的人，我也會與他們為伍。如果路易斯只有一個恨他的人，那那個人就是我。如果路易斯一個恨他的人都沒有，那我就不存在了…
+                            </div>
+
+                        </div>
+                    </fieldset>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

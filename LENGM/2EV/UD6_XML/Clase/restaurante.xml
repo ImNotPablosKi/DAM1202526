@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE empresa SYSTEM "ejercicio4.dtd">
+<!DOCTYPE empresa SYSTEM "ej4.dtd">
 <empresa>
     <departamentos>
         <departamento id="DEPT001" codigo="IT">
