@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE libro SYSTEM "biblioteca.dtd">
+<libro isbn="978-0-123456-78-9" idioma="es" formato="tapa_blanda">
+    <autores>
+        <autor id="a1" rol="autor">
+            <nombre></nombre>
+            <apellidos></apellidos>
+        </autor>
+    </autores>
+    <editorial></editorial>
+    <sinopsis></sinopsis>
+</libro>
