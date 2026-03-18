@@ -1,0 +1,62 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="miIsbn">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="\d{10}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miIdioma">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="es"></xs:enumeration>
+            <xs:enumeration value="en"></xs:enumeration>
+            <xs:enumeration value="fr"></xs:enumeration>
+            <xs:enumeration value="de"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miFormato">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="tapa_blanda"></xs:enumeration>
+            <xs:enumeration value="tapa_dura"></xs:enumeration>
+            <xs:enumeration value="ebook"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miRol">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="autor"></xs:enumeration>
+            <xs:enumeration value="coautor"></xs:enumeration>
+            <xs:enumeration value="traductor"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="libro">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="autores">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="autor"  maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"></xs:element>
+                                        <xs:element name="apellidos" type="xs:string"></xs:element>
+                                        <xs:element name="nacionalidad" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID" use="required"></xs:attribute>
+                                    <xs:attribute name="rol" type="miRol" default="autor"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="editorial" type="xs:string"></xs:element>
+                <xs:element name="sinopsis" type="xs:string"></xs:element>
+                <xs:element name="categoria">
+                    <xs:complexType>
+                        <xs:attribute name="nombre" type="xs:string" use="optional"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="isbn" type="miIsbn" use="required"></xs:attribute>
+            <xs:attribute name="idioma" type="miIdioma" use="required"></xs:attribute>
+            <xs:attribute name="formato" type="miFormato" default="tapa_blanda" use="optional"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

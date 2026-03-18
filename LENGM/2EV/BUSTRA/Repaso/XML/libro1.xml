@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE libro SYSTEM "biblioteca.dtd">
-<libro isbn="978-0-123456-78-9" idioma="es" formato="tapa_blanda">
+<libro isbn="1234567890" idioma="es" formato="tapa_blanda" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="biblioteca.xsd">
     <autores>
         <autor id="a1" rol="autor">
+            <nombre></nombre>
+            <apellidos></apellidos>
+            <nacionalidad></nacionalidad>
+        </autor>
+        <autor id="a2" rol="autor">
             <nombre></nombre>
             <apellidos></apellidos>
             <nacionalidad></nacionalidad>
