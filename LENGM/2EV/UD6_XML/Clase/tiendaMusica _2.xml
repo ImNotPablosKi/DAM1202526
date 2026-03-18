@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<tiendaMusica xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="musica.xsd">
+<!DOCTYPE tiendaMusica SYSTEM "musica.dtd">
+<tiendaMusica>
     <disco id="D001">
         <titulo>Mayeutica</titulo>
         <artista>Robe</artista>

@@ -1,0 +1,13 @@
+<!ELEMENT tiendaMusica (disco+)>
+<!ELEMENT disco (titulo, artista, año, genero, precio, canciones)>
+<!ATTLIST disco id ID #REQUIRED>
+
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT artista (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT genero (#PCDATA)>
+<!ELEMENT precio (#PCDATA)>
+<!ELEMENT canciones (cancion+)>
+<!ELEMENT cancion (titulo, duracion)>
+<!ATTLIST cancion numero CDATA #REQUIRED>
+<!ELEMENT duracion (#PCDATA)>
