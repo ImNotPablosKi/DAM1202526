@@ -1,0 +1,19 @@
+<!ELEMENT pelicula (actores, director, año, duracion, sinopsis, genero*)>
+<!ATTLIST pelicula id ID #REQUIRED
+    titulo CDATA #REQUIRED clasificacion (PG-13|R|ATP|NC-17) "ATP">
+
+<!ELEMENT actores (actor+)>
+<!ELEMENT actor (nombre, apellidos, edad?)>
+<!ATTLIST actor codigo ID #REQUIRED
+    rol (extra|protagonista|secundario) #IMPLIED>
+
+<!ELEMENT nombre (#PCDATA)>
+<!ELEMENT apellidos (#PCDATA)>
+<!ELEMENT edad (#PCDATA)>
+
+<!ELEMENT director (#PCDATA)>
+<!ELEMENT año (#PCDATA)>
+<!ELEMENT duracion (#PCDATA)>
+<!ELEMENT sinopsis (#PCDATA)>
+<!ELEMENT genero EMPTY>
+<!ATTLIST genero nombre CDATA #REQUIRED>

@@ -1,0 +1,13 @@
+<!ELEMENT receta (ingredientes, elaboracion, tiempo_prep, etiqueta*, sustituto?, calorias?)>
+<!ATTLIST receta codigo ID #REQUIRED
+    nombre CDATA #REQUIRED 
+    dificultad (facil|media|dificil) #IMPLIED>
+
+<!ELEMENT ingredientes (#PCDATA)>
+<!ELEMENT elaboracion (#PCDATA)>
+<!ELEMENT tiempo_prep (#PCDATA)>
+<!ELEMENT etiqueta EMPTY>
+<!ATTLIST etiqueta tipo (rapida|vegana|sin_gluten) #REQUIRED>
+<!ELEMENT sustituto (#PCDATA)>
+<!ELEMENT calorias (#PCDATA)>
+<!ATTLIST calorias por (porcion|racion) "porcion">

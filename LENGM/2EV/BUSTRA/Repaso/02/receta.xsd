@@ -1,0 +1,78 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="tipoIng">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="basico"></xs:enumeration>
+            <xs:enumeration value="guarnicion"></xs:enumeration>
+            <xs:enumeration value="especiado"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miCantidad">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="[0-9]+"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="tipoEtq">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="vegana"></xs:enumeration>
+            <xs:enumeration value="sin_gluten"></xs:enumeration>
+            <xs:enumeration value="rapida"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miID">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="[a-zA-Z]{2}\d{3}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miDificultad">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="facil"></xs:enumeration>
+            <xs:enumeration value="media"></xs:enumeration>
+            <xs:enumeration value="dificil"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="receta">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="ingredientes">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="ingrediente" minOccurs="1" maxOccurs="unbounded">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"></xs:element>
+                                        <xs:element name="cantidad" type="miCantidad"></xs:element>
+                                        <xs:element name="unidad" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="id" type="xs:ID"></xs:attribute>
+                                    <xs:attribute name="tipo" type="tipoIng" default="basico"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="elaboracion">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="paso" type="xs:string" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="tiempo_prep" type="xs:int"></xs:element>
+                <xs:element name="etiqueta">
+                    <xs:complexType>
+                        <xs:attribute name="tipo" default="rapida" use="optional" type="tipoEtq"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="sustituto"></xs:element>
+                <xs:element name="calorias">
+                    <xs:complexType>
+                        <xs:attribute name="por" default="porcion"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="codigo" type="miID" use="required"></xs:attribute>
+            <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="dificultad" type="miDificultad" use="optional"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

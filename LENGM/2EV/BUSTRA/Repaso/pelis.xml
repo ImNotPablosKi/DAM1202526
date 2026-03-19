@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE pelicula SYSTEM "pelis.dtd"> -->
+<pelicula id="mov0001" titulo="Pascualadas" clasificacion="PG-13" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="pelis.xsd">
+    <actores>   
+        <actor codigo="a01" rol="extra">
+            <nombre>Pascual</nombre>
+            <apellidos>Pérez Bagán</apellidos>
+            <edad>67</edad>
+        </actor>
+    </actores>
+    <director>Pascual también</director>
+    <año>2067</año>
+    <duracion>190</duracion>
+    <sinopsis>Volvemos al taller...</sinopsis>
+    <genero nombre="SliceOfLife"></genero>
+    <genero nombre="SliceOfLife"></genero>
+</pelicula>

@@ -1,0 +1,68 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:simpleType name="miRol">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="extra"></xs:enumeration>
+            <xs:enumeration value="protagonista"></xs:enumeration>
+            <xs:enumeration value="secundario"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miAño">
+        <xs:restriction base="xs:int">
+            <xs:pattern value="\d{4}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miDuracion">
+        <xs:restriction base="xs:int">
+            <xs:minExclusive value="60"></xs:minExclusive>
+            <xs:maxInclusive value="190"></xs:maxInclusive>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miId">
+        <xs:restriction base="xs:ID">
+            <xs:pattern value="[a-zA-Z]{3}\d{4}"></xs:pattern>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:simpleType name="miClasif">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ATP"></xs:enumeration>
+            <xs:enumeration value="R"></xs:enumeration>
+            <xs:enumeration value="PG-13"></xs:enumeration>
+            <xs:enumeration value="NC-17"></xs:enumeration>
+        </xs:restriction>
+    </xs:simpleType>
+    <xs:element name="pelicula">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="actores">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="actor" maxOccurs="unbounded" minOccurs="1">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="nombre" type="xs:string"></xs:element>
+                                        <xs:element name="apellidos" type="xs:string"></xs:element>
+                                        <xs:element name="edad" type="xs:int" minOccurs="0"></xs:element>
+                                    </xs:sequence>
+                                    <xs:attribute name="codigo" type="xs:ID" use="required"></xs:attribute>
+                                    <xs:attribute name="rol" type="miRol"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="director" type="xs:string"></xs:element>
+                <xs:element name="año" type="miAño"></xs:element>
+                <xs:element name="duracion" type="miDuracion"></xs:element>
+                <xs:element name="sinopsis" type="xs:string"></xs:element>
+                <xs:element name="genero" maxOccurs="unbounded" minOccurs="0">
+                    <xs:complexType>
+                        <xs:attribute name="nombre" type="xs:string" use="required"></xs:attribute>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="id" type="miId" use="required"></xs:attribute>
+            <xs:attribute name="titulo" type="xs:string" use="required"></xs:attribute>
+            <xs:attribute name="clasificacion" type="miClasif" use="optional"></xs:attribute>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>

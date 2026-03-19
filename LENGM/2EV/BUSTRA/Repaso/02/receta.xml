@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- <!DOCTYPE receta SYSTEM "receta.dtd"> -->
+<receta codigo="rc001" nombre="tortilla" dificultad="media" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="receta.xsd">
+    <ingredientes>
+        <ingrediente id="i01" tipo="basico">
+            <nombre></nombre>
+            <cantidad>6</cantidad>
+            <unidad></unidad>
+        </ingrediente>
+        <ingrediente id="i02" tipo="basico">
+            <nombre></nombre>
+            <cantidad>6</cantidad>
+            <unidad></unidad>
+        </ingrediente>
+        <ingrediente id="i03" tipo="basico">
+            <nombre></nombre>
+            <cantidad>6</cantidad>
+            <unidad></unidad>
+        </ingrediente>
+    </ingredientes>
+    <elaboracion>
+        <paso>1</paso>
+        <paso>2</paso>
+    </elaboracion>
+    <tiempo_prep>67</tiempo_prep>
+    <etiqueta tipo="rapida"></etiqueta>
+    <sustituto>ni idea</sustituto>
+    <calorias por="porcion"></calorias>
+</receta>
