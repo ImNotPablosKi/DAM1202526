@@ -1,42 +1,57 @@
 <script setup>
-import { setBlockTracking } from 'vue';
+import { computed, ref } from 'vue'
 
-  const nombre = "Vue 3"
-  const arrayFrutas = ["🍎", "🍌", "🍉", "🍓", "🍒"]
-  const descargarFrutas = [
 
-      {
+  // Métodos
+  const manejarClick = ( mensaje ) => {
 
-        name: "Manzana",
-        price: "1.00€",
-        description: "Manzana Golden",
-        stock: 0
+    console.log( mensaje )
 
-      },
-      {
+  }
 
-        name: "Pera",
-        price: "2.00€",
-        description: "Pera Conferencia",
-        stock: 10
+  const menejarClick2 = () => {
 
-      },
-      {
+    console.log("Hola")
 
-        name: "Naranja",
-        price: "3.00€",
-        description: "Naranjas de Valencia",
-        stock: 67
+  }
 
-      },
+  const contador = ref(0)
 
-  ]
+  const incrementar = () => {
 
-  const fruta = {
+    contador.value++
 
-    name: "Fresa",
-    price: "4.00€",
-    description: "Fresón de Palos"
+  }
+
+   const restar = () => {
+
+    contador.value--
+
+  }
+
+   const reset = () => {
+
+    contador.value = 0
+
+  }
+
+  // Propiedades Computaoas
+  const claseContador = computed( () => {
+    if (contador.value === 0) {
+
+      return 'zero'
+
+    }
+
+    return contador.value > 0 ? 'verde' : 'rojo'
+
+  } )
+
+  const arrayFavoritos = ref([])
+
+  const almacenar = () => {
+
+    arrayFavoritos.value.push(contador.value)
 
   }
 
@@ -44,47 +59,66 @@ import { setBlockTracking } from 'vue';
 
 <template>
 
-  <h1>{{ nombre }}</h1>
-  <hr>
-  <h3>Directiva v-for</h3>
-  <p>{{ arrayFrutas }}</p>
-  <ul>
+  <div class="container">
 
-    <li v-for="(fruta, index) in arrayFrutas" :key="index">
+    <div class="text-center">
 
-      {{ index }} - {{ fruta }}
+        <h1>Contador</h1>
+        <h1 :class="claseContador">{{ contador }}</h1>
 
-    </li>
+        <!--<template v-if="contador > 0">
 
-  </ul>
-  <hr>
+        <h1 style="color: green;">{{ contador }}</h1>
 
-  <p>Recorremos un Array de objetos:</p>
+        </template>
+        <template v-if="contador < 0">
 
-  <ul>
+        <h1 style="color: red;">{{ contador }}</h1>
 
-    <li v-for="fruta in descargarFrutas">
+        </template>
+        <template v-if="contador == 0">
 
-      {{ fruta.name }}, {{ fruta.price }}, {{ fruta.description }}
+        <h1>{{ contador }}</h1>
 
-    </li>
+        </template>
+      -->
 
-  </ul>
-  <hr>
+      <div class="btn-group">
 
-  <p>Recorremos un SOLO objeto:</p>
+        <button @click="incrementar" class="btn btn-success">Aumentar</button>
+        <button @click="restar" class="btn btn-danger">Restar</button>
+        <button @click="reset" class="btn btn-primary">Reiniciar</button>
+        <button @click="almacenar" class="btn btn-info">Favorito</button>
 
-  <ul>
+      </div>
 
-    <li v-for="(valor, atributo) in fruta">
+      <p>Favoritos:</p>
 
-      {{ atributo }} - {{ valor }}
+      <ul>
 
-    </li>
+        <li v-for="num in arrayFavoritos">{{ num }}</li>
 
-  </ul>
-  <hr>
+      </ul>
 
-  <p>Lista de productos con 10 o más unidades.</p>
+    </div>
+
+    
+
+  </div>
 
 </template>
+
+<style>
+
+  .rojo {
+    color: red;
+  }
+
+  .verde {
+    color: green;
+  }
+
+  .zero {
+    color: yellow;
+  }
+</style>
