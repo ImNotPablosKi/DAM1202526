@@ -1,0 +1,46 @@
+-- Cosas NORMALIZACIÓN --
+
+-------------------------------------
+
+HOSPITALIZACIÓN (NSS, COD_CAMA, COD_DOCTOR, FECHA,
+OBSERVACIONES, PRESCRIPCIÓN)
+	CP: { NSS, COD_CAMA }
+	CA (cod_doctor) referencia a DOCTORES (cod_doctor)
+	VNN: { equipo_ats }; VNN: { nom_doctor };
+	VNN: { cod_doctor }; VNN: { evolución }
+
+1FN? -> NO
+
+ESQUIPOS_ATS (NSS, COD_CAMA, EQUIPO_ATS)
+	CP (NSS, COD_CAMA, EQUIPO_ATS)
+	CA (NSS, COD_CAMA) referencia a HOSPITALIZACIÓN (NSS, COD_CAMA)
+
+2FN? -> SI
+
+3FN? -> NOOOOO, nom_doctor depende de cod_doctor
+
+DOCTORES (cod_doctor, nom_doctor)
+	CP (cod_doctor)
+
+------------------------------------------------
+
+UNIVERSIDAD (num_exp, nombre, num_hab, telef)
+	CP (num_exp)
+	CA (num_hab) referencia a HABITACION (num_hab)
+	
+1FN? > NO
+
+NOTAS (num_exp, cod_asig, conv, nota)
+	CP (num_exp, cod_asig, conv)
+	CA (num_exp) referencia a UNIVERSIDAD (num_exp)
+	CA (cod_asig) referencia a ASIGNATURAS (cod_asig)
+	
+2FN? >
+
+ASIGNATURAS (cod_asig, nom_asig)
+	CP (cod_asig)
+	
+3FN? > NOOOOO
+
+HABITACION (num_hab, telef)
+	CP (num_hab)
