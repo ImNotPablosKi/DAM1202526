@@ -36,3 +36,5 @@ SELECT c.*, COUNT(l.id_llamada) FROM llamadas l INNER JOIN clientes c ON l.id_cl
 INNER JOIN tarifas t ON c.tarifa=t.id_tarifa GROUP BY c.id_cliente 
 HAVING COUNT(l.id_llamada) >
 AVG((SELECT COUNT(l2.id_llamada) FROM llamadas l2 INNER JOIN clientes c2 ON l2.id_cliente=c2.id_cliente WHERE c2.tarifa=c.tarifa));
+
+-- Estaba centrado en el proyecto y no me dió tiempo a terminarlos.

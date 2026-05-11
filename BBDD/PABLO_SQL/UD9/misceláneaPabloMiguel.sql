@@ -217,3 +217,36 @@ SELECT * FROM v_habilidades_populares;
 
 SELECT * FROM empleado;
 SELECT * FROM emp_backup;
+
+-- ---------------------------
+-- ÍNDICES Y COMANDO EXPLAIN
+-- ---------------------------
+
+-- 1
+CREATE INDEX idx_sal ON empleado (SalEmp);
+EXPLAIN SELECT * FROM empleado WHERE SalEmp > 3000000;
+
+-- 3
+CREATE INDEX idx_fecinc ON empleado (FecInEmp);
+EXPLAIN SELECT * FROM empleado WHERE FecInEmp > '2000-01-01';
+EXPLAIN SELECT * FROM empleado WHERE YEAR(FecInEmp) = 2000;
+
+-- 4
+CREATE INDEX idx_dep_sal ON empleado (CodDep, SalEmp);
+
+-- --------------
+-- TRANSACCIONES
+-- --------------
+
+-- 1
+SET autocommit = 0;
+SELECT @autocommit;
+INSERT INTO empleado VALUES (1234, 'PROZS', NULL, CURDATE(), '1985-02-02', '12345678J', 'LOLO', 0, 123456);
+SELECT * FROM empleado WHERE NomEmp = 'LOLO';
+
+ROLLBACK;
+
+-- 2
+
+
+
