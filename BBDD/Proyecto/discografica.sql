@@ -163,4 +163,6 @@ INSERT INTO artistas_patrocinados (cod_artista, nif) VALUES
 (2, 'C3456789D'),
 (3, 'D4567890E'),
 (4, 'E5678901F');
+
+INSERT INTO logged VALUES ('admin', 'Sor2425$');
     
