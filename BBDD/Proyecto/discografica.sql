@@ -1,6 +1,5 @@
 -- DISCOGRÁFICA Proyecto Intermodular Final DAM1
 -- Apartado BBDD, Script SQL
--- Alumno: Pablo Miguel Domínguez
 
 -- Borrado preventivo
 DROP DATABASE IF EXISTS discografica;
