@@ -5,7 +5,7 @@
 
 -- 1. Inserción de datos a partir del resultado de una consulta
 INSERT INTO patrocinadores (nif, marca, tipo)
-SELECT CONCAT('NEW', cod_artista), nombre_artistico, 'TEMPORAL'
+SELECT CONCAT('NEW', cod_artista), nombre_artistico, 'VARIABLE'
 FROM artistas
 WHERE ventas > 90;
 
@@ -13,7 +13,7 @@ WHERE ventas > 90;
 UPDATE artistas
 SET ventas = ventas + 10
 WHERE cod_isrc IN 
-(SELECT cod_isrc FROM sede WHERE label = 'Sony Music');
+(SELECT cod_isrc FROM sede WHERE label = 'SONY');
 
 -- 3. Modificación donde el nuevo valor proviene de una subconsulta
 UPDATE artistas

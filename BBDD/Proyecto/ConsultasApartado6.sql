@@ -15,7 +15,7 @@ WHERE cod_isrc IN (SELECT cod_isrc FROM sede WHERE nombre LIKE '%Music%');
 
 -- 3. ALL y subconsulta
 SELECT nombre_artistico, ventas FROM artistas
-WHERE ventas >= ALL (SELECT ventas FROM artistas);
+WHERE ventas = (SELECT MAX(ventas) FROM artistas);
 
 
 -- 4. Tres subconsultas anidadas
